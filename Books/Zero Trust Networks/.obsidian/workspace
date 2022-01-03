@@ -1,0 +1,102 @@
+{
+  "main": {
+    "id": "5ac8e548bed673f7",
+    "type": "split",
+    "children": [
+      {
+        "id": "f5c63ec1717a3931",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "notes/03 - Network Agents.md",
+            "mode": "preview"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "f9d9799dab6e33c3",
+    "type": "split",
+    "children": [
+      {
+        "id": "0d7e7601ed7ba535",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a35739d3f305aba2",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "1ee6c852858ec0f5",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 263
+  },
+  "right": {
+    "id": "c590b5d677ccbbd3",
+    "type": "split",
+    "children": [
+      {
+        "id": "40b79e06bda47766",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ad9a12429cde69af",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "notes/03 - Network Agents.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "f5c63ec1717a3931",
+  "lastOpenFiles": [
+    "notes/03 - Network Agents.md",
+    "notes/04 - Making Authorisation Decisions.md",
+    "notes/08 - Trusting the Traffic.md",
+    "Zero Trust Networks.md",
+    "My Summary.md",
+    "notes/01 - Zero Trust Fundamentals.md",
+    "notes/10 - The Adversarial View.md",
+    "notes/09 - Realising a Zero Trust Network.md",
+    "notes/06 - Trusting Users.md",
+    "notes/05 - Trusting Devices.md"
+  ]
+}

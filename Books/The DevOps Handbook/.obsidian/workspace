@@ -1,0 +1,94 @@
+{
+  "main": {
+    "id": "41573aae2a07fafb",
+    "type": "split",
+    "children": [
+      {
+        "id": "661b9ea8f2985669",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "1. Imagine a World Where Dev and Ops Become DevOps.md",
+            "mode": "source"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "ab89f994a881630a",
+    "type": "split",
+    "children": [
+      {
+        "id": "e5a24dc513a5ca20",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "74a48ab322bdc6f1",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "43c4dad4535df3cf",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "6e56500f60d93bfe",
+    "type": "split",
+    "children": [
+      {
+        "id": "fe60216a052fa370",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "59cac44911520dd3",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "1. Imagine a World Where Dev and Ops Become DevOps.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "661b9ea8f2985669",
+  "lastOpenFiles": [
+    "1. Imagine a World Where Dev and Ops Become DevOps.md",
+    "Untitled.md"
+  ]
+}

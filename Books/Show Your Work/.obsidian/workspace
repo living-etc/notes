@@ -1,0 +1,91 @@
+{
+  "main": {
+    "id": "bbfcc9573515f74c",
+    "type": "split",
+    "children": [
+      {
+        "id": "9194ec1ade497b19",
+        "type": "leaf",
+        "active": true,
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Notes.md",
+            "mode": "source"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "0269a3d1b461b095",
+    "type": "split",
+    "children": [
+      {
+        "id": "d138281bdefca86f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b04a1471766dd0f9",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "89b82fd309766a9f",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "68268b96101e0e3a",
+    "type": "split",
+    "children": [
+      {
+        "id": "4abec17e746b6212",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9cb6e047581b5697",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Notes.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "lastOpenFiles": [
+    "Notes.md"
+  ]
+}

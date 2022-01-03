@@ -1,0 +1,103 @@
+{
+  "main": {
+    "id": "67f94064bb8db099",
+    "type": "split",
+    "children": [
+      {
+        "id": "59c5b35ffee8e870",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Notes/2 - Application Layer.md",
+            "mode": "source"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "7a526684e2badbde",
+    "type": "split",
+    "children": [
+      {
+        "id": "4a6167a83ec186e5",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "879f494e013630f3",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "4645beb9857ef534",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 314,
+    "collapsed": true
+  },
+  "right": {
+    "id": "738d70373e9d0e85",
+    "type": "split",
+    "children": [
+      {
+        "id": "d8e144ec8f6caf82",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e044b96933493106",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Notes/2 - Application Layer.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "59c5b35ffee8e870",
+  "lastOpenFiles": [
+    "Notes/2 - Application Layer.md",
+    "Notes/1 - Computer Networks and the Internet.md",
+    "My Overview.md",
+    "9 - Multimedia Networking/Notes.md",
+    "8 - Security in Computer Networks/Notes.md",
+    "7 - Wireless and Mobile Networks/Notes.md",
+    "6 - The Link Layer and LANs/Notes.md",
+    "4 - The Network Layer - The Data Plane/Notes.md",
+    "3 - Transport Layer/Notes.md",
+    "2 - Application Layer/Notes.md"
+  ]
+}

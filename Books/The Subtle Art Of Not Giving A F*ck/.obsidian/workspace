@@ -1,0 +1,96 @@
+{
+  "main": {
+    "id": "3d6e8d1f0e026b6d",
+    "type": "split",
+    "children": [
+      {
+        "id": "e51174ff4979cf06",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Notes.md",
+            "mode": "source"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "e19c92988d757691",
+    "type": "split",
+    "children": [
+      {
+        "id": "62fac8e535daba3d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "02ca8aa42eda6aa8",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "7b75688050874659",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "3b08b6d72e0c559c",
+    "type": "split",
+    "children": [
+      {
+        "id": "13966d2abdc2317e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9d3b8c4b6b167836",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Notes.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "e51174ff4979cf06",
+  "lastOpenFiles": [
+    "Notes.md",
+    "The Subtle Art Of Not Giving A F*ck.md",
+    "Overview.md",
+    "Untitled.md"
+  ]
+}
