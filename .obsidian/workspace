@@ -7,11 +7,8 @@
         "id": "dab3f5f105ff0c44",
         "type": "leaf",
         "state": {
-          "type": "markdown",
-          "state": {
-            "file": "Books/The Subtle Art Of Not Giving A F*ck/The Subtle Art Of Not Giving A Fuck.md",
-            "mode": "source"
-          }
+          "type": "empty",
+          "state": {}
         }
       }
     ],
@@ -68,7 +65,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Books/The Subtle Art Of Not Giving A F*ck/The Subtle Art Of Not Giving A Fuck.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
