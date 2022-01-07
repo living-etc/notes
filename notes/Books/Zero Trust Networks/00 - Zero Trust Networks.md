@@ -12,24 +12,24 @@ Tags: [kind/book status/reading]
 
 # Contents
 ## Part 1: Fundamental Concepts
-[[01 - Zero Trust Fundamentals]]
-[[02 - Managing Trust]]
+- [[01 - Zero Trust Fundamentals]]
+- [[02 - Managing Trust]]
 
 ## Part 2: Zero Trust Concepts
-[[03 - Network Agents]]
-[[04 - Making Authorisation Decisions]]
+- [[03 - Network Agents]]
+- [[04 - Making Authorisation Decisions]]
 
 ## Part 3: Establishing Trust
-[[05 - Trusting Devices]]
-[[06 - Trusting Users]]
-[[07 - Trusting Applications]]
-[[08 - Trusting the Traffic]]
+- [[05 - Trusting Devices]]
+- [[06 - Trusting Users]]
+- [[07 - Trusting Applications]]
+- [[08 - Trusting the Traffic]]
 
 ## Part 4: Building a Zero Trust Network
-[[09 - Realising a Zero Trust Network]]
+- [[09 - Realising a Zero Trust Network]]
 
 ## Part 5: Attacking a Zero Trust Network
-[[10 - The Adversarial View]]
+- [[10 - The Adversarial View]]
 
 ## Further Reading
 - [INSIDE THE NSA’S SECRET EFFORTS TO HUNT AND HACK SYSTEM ADMINISTRATORS](https://theintercept.com/2014/03/20/inside-nsa-secret-efforts-hunt-hack-system-administrators/)
