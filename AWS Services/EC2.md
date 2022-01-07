@@ -632,6 +632,115 @@ Metrics for your instance can be collected and stored in CloudWatch for 15 month
 
 EC2 sends data to CloudWatch in 5 minute intervals by default, or 1 minute intervals if detailed monitoring is enabled for the given instance. When detailed monitoring is enabled, you are charged per metric you send to CloudWatch, not for data storage.
 # Networking
+## Regions and Zones
+Amazon EC2 is composed of the following geographical entities:
+- **Region** - the standard AWS geographical unit. When deploying resources and services, you always specify the region they will be placed in. Each region is physically isolated from the others, preventing failures in one affecting the others.
+- **Availability Zones** - a subset of a region, physically isolated from the other AZs in that region, preventing failures in one affecting the others. AZs are named differently for each AWS account, so `us-east-1a` will not be the same datacentre for all accounts. If you need to coordinate resources in AZ across accounts, you can use the AZ ID to do this, which takes the form of `use1-az1`. These IDs always refer to the same AZs in each account.
+- **Local Zones** - an extension of an AWS region, allowing you to deploy resources and services even closer to your users. Currently only available in `us-east-1` and `us-west-2`.
+- **Wavelength Zones** - another extension of a region, allowing you to deploy resources to the edge of a 5G carriers network. It works by having you extend your VPC to the carriers network, and opting in to the wavelength zone that will be created as a result. You deploy resources into this zone in the same way you would into an availability zone.
+- **AWS Outposts** - a way of extending AWS into an on-prem datacentre. You create a VPC in AWS then create one or more subnets on the Outpost. You can then deploy resources into that subnet in your datacentre while managing them through the AWS console and API.
+
+## Enhanced Networking
+Enhanced networking uses a form of virtualisation (single root I/O virtualisation, or SR-IOV) to provide higher bandwidth, higher packer per second performance (PPS) and lower inter-instance latencies.
+
+There is no additional charge for using Enhanced Networking.
+
+So why would you not just enable it by default? You need to enable it in the kernel. OSs won't come with that support by default.
+
+Enhanced networking is available by using one of two possible virtual network interfaces: AWS' own Enhanced Network Adaptor (ENA) or the Intel 82599 Virtual Function (VF) interface. The ENA offers network speeds of up to 100 Gbps while the Intel device only offers 10 Gbps.
+
+### Enhanced Networking using the Elastic Network Adaptor
+Enhanced networking is provided by a virtual network interface called the Elastic Network Adaptor (ENA). To use this device, you must first install and enable the ENA module in the kernel of the guest OS.
+
+You can verify that the ENA kernel module is installed using the following command:
+
+```
+[ec2-user ~]$ modinfo ena
+filename:       /lib/modules/4.14.33-59.37.amzn2.x86_64/kernel/drivers/amazon/net/ena/ena.ko
+version:        1.5.0g
+license:        GPL
+description:    Elastic Network Adapter (ENA)
+author:         Amazon.com, Inc. or its affiliates
+srcversion:     692C7C68B8A9001CB3F31D0
+alias:          pci:v00001D0Fd0000EC21sv*sd*bc*sc*i*
+alias:          pci:v00001D0Fd0000EC20sv*sd*bc*sc*i*
+alias:          pci:v00001D0Fd00001EC2sv*sd*bc*sc*i*
+alias:          pci:v00001D0Fd00000EC2sv*sd*bc*sc*i*
+depends:
+retpoline:      Y
+intree:         Y
+name:           ena
+```
+
+You can verify an AMI has ENA support using this AMI query:
+
+```
+aws ec2 describe-images --image-id ami_id --query "Images[].EnaSupport"
+```
+
+You can verify the ENA driver is being used on a particular network interface like so:
+
+```
+[ec2-user ~]$ ethtool -i eth0
+driver: ena
+version: 1.5.0g
+firmware-version:
+expansion-rom-version:
+bus-info: 0000:00:05.0
+supports-statistics: yes
+supports-test: no
+supports-eeprom-access: no
+supports-register-dump: no
+supports-priv-flags: no
+```
+
+#### Enabling Enhanced Networking
+- [Enabling it on Ubuntu](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sriov-networking.html#enhanced-networking-ubuntu)
+- [Enabling it on Amazon Linux](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sriov-networking.html#enable-enhanced-networking)
+- [Enabling it on Linux](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sriov-networking.html#enhanced-networking-linux)
+
+
+## Elastic Fabric Adapter
+
+## Placement Groups
+A placement group is a way of influencing the way instances are distributed across an availability zone. There are three types of placement group, and there is no charge for using them.
+
+### Cluster
+A **cluster** placement group is where instances are grouped together in a single availability zone. They enjoy a higher per-flow throughput limit for TCP/IP traffic and are placed in the same high-bisection bandwidth segment of the network.
+
+Cluster placement groups are recommended for workloads that require low network latency, high network throughput, and/or where most of the traffic is between instances.
+
+It is recommended:
+- to use Enhanced Networking with this configuration.
+- to launch all instances in a cluster with a single launch request.
+
+A cluster placement group runs on the same hardware, which is why they are able to get such good network connections between instances. As such, attempting to launch new instances into an existing placement group, or stopping some instances in a cluster to be restarted later, might result in capacity errors since the physical server is now full up. This problem can be solved by stopping and starting all instances in the placement group so they can be migrated to hardware that has capacity for all requested instances.
+
+#### Rules and limitations
+- All current generation instance types are supported, except burstable performance instances and Mac instances.
+- It can't span multiple AZs
+- Network throughput is limited to what the slowest instance supports
+- When Enhanced Networking is enabled, instances within a cluster placement group can use up to 10 Gbps for single flow traffic, but only up to 5 Gbps when not in one.
+
+### Partition
+A partition placement group is a grouping of instances into one or more partitions within a region. All the instances in a particular partition will be deployed across a set of racks that they share with no other partition. The racks of a partition will have power sources that are shared with no other racks.
+
+The purpose of a partition placement group is to reduce the likelihood of correlated hardware failures affecting the application running across the instances. It is most useful for replicated workloads, and even allows topology-aware applications to see which instances are in each partition so they can make intelligent replication decisions.
+
+#### Rules and limitations
+- Max 7 partitions per placement group. Max number of instances is limited by account.
+- When launching multiple instances into a placement group, there is no guarantee of even distribution of instances across partitions.
+- A partition placement group with Dedicated instances can have a maximum of two partitions.
+
+### Spread
+A spread placement group is a set of instances that are each placed on distinct racks. This is recommended for applications that have a small number of critical instances.
+
+A spread placement group can span multiple AZs per region, and you can have up to seven instances per AZ per group.
+
+#### Rules and limitations
+- Maximum of seven instances per AZ. If you need more than seven, it is recommended to run multiple spread placement groups.
+- Do not support dedicated instances.
+
 # Security
 # Storage
 # Resource and tags
