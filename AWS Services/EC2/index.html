@@ -606,6 +606,10 @@
     <ul class="dropdown-menu">
             
 <li>
+    <a href="../../Books/Zero%20Trust%20Networks/00%20-%20Zero%20Trust%20Networks/" class="dropdown-item">Zero Trust Networks</a>
+</li>
+            
+<li>
     <a href="../../Books/Zero%20Trust%20Networks/01%20-%20Zero%20Trust%20Fundamentals/" class="dropdown-item">1 - Zero Trust Fundamentals</a>
 </li>
             
@@ -648,10 +652,6 @@
 <li>
     <a href="../../Books/Zero%20Trust%20Networks/Quotes/" class="dropdown-item">Quotes</a>
 </li>
-            
-<li>
-    <a href="../../Books/Zero%20Trust%20Networks/Zero%20Trust%20Networks/" class="dropdown-item">Zero Trust Networks</a>
-</li>
     </ul>
   </li>
                                 </ul>
@@ -688,11 +688,6 @@
                         </ul>
 
                     <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
-                                <i class="fa fa-search"></i> Search
-                            </a>
-                        </li>
                             <li class="nav-item">
                                 <a rel="prev" href="../Config/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
@@ -845,84 +840,84 @@
 <pre><code class="language-ad-abstract">Amazon EC2 is the reason you can get your application onto a server in 10 minutes with nothing more than a credit card. It provides a choice of nearly 400 instance for various types of workloads including: memory, CPU network optimization; GPU workloads; and a choice of Linux flavors as well as Windows and macOS. You can configure the CPU and memory of your instance for your workload, paying based on your choice, and you can terminate it at any time, instantly stopping spending money.
 </code></pre>
 <ul>
-<li>[[#Common components of an EC2 instance|Common components of an EC2 instance]]</li>
-<li>[[#Reservations|Reservations]]</li>
-<li>[[#Amazon Machine Images|Amazon Machine Images]]<ul>
-<li>[[#Launch Permissions|Launch Permissions]]</li>
-<li>[[#How You're Charged|How You're Charged]]</li>
-<li>[[#Linux AMI virtualization types|Linux AMI virtualization types]]</li>
-<li>[[#Boot Modes|Boot Modes]]</li>
+<li><a href="./#common-components-of-an-ec2-instance" title="Common components of an EC2 instance">Common components of an EC2 instance</a></li>
+<li><a href="./#reservations" title="Reservations">Reservations</a></li>
+<li><a href="./#amazon-machine-images" title="Amazon Machine Images">Amazon Machine Images</a><ul>
+<li><a href="./#launch-permissions" title="Launch Permissions">Launch Permissions</a></li>
+<li><a href="./#how-youre-charged" title="How You're Charged">How You're Charged</a></li>
+<li><a href="./#linux-ami-virtualization-types" title="Linux AMI virtualization types">Linux AMI virtualization types</a></li>
+<li><a href="./#boot-modes" title="Boot Modes">Boot Modes</a></li>
 </ul>
 </li>
-<li>[[#Instances|Instances]]<ul>
-<li>[[#Start, stop and terminate instances|Start, stop and terminate instances]]</li>
-<li>[[#Instance Types|Instance Types]]<ul>
-<li>[[#Overview|Overview]]</li>
-<li>[[#Hardware Specifications|Hardware Specifications]]</li>
-<li>[[#Processor Features|Processor Features]]</li>
-<li>[[#AMI Virtualisation Types|AMI Virtualisation Types]]</li>
-<li>[[#Instance Built on the Nitro System|Instance Built on the Nitro System]]</li>
-<li>[[#Network and Storage Features|Network and Storage Features]]</li>
-<li>[[#Networking Features|Networking Features]]</li>
-<li>[[#Storage Features|Storage Features]]</li>
-<li>[[#Instance limits|Instance limits]]</li>
-<li>[[#General Purpose|General Purpose]]</li>
-<li>[[#Instance Performance|Instance Performance]]</li>
-<li>[[#Network Performance|Network Performance]]</li>
-<li>[[#SSD I/O Performance|SSD I/O Performance]]</li>
-<li>[[#Instance Features|Instance Features]]</li>
-<li>[[#Burstable Performance Instances|Burstable Performance Instances]]</li>
+<li><a href="./#instances" title="Instances">Instances</a><ul>
+<li><a href="./#start-stop-and-terminate-instances" title="Start, stop and terminate instances">Start, stop and terminate instances</a></li>
+<li><a href="./#instance-types" title="Instance Types">Instance Types</a><ul>
+<li><a href="./#overview" title="Overview">Overview</a></li>
+<li><a href="./#hardware-specifications" title="Hardware Specifications">Hardware Specifications</a></li>
+<li><a href="./#processor-features" title="Processor Features">Processor Features</a></li>
+<li><a href="./#ami-virtualisation-types" title="AMI Virtualisation Types">AMI Virtualisation Types</a></li>
+<li><a href="./#instance-built-on-the-nitro-system" title="Instance Built on the Nitro System">Instance Built on the Nitro System</a></li>
+<li><a href="./#network-and-storage-features" title="Network and Storage Features">Network and Storage Features</a></li>
+<li><a href="./#networking-features" title="Networking Features">Networking Features</a></li>
+<li><a href="./#storage-features" title="Storage Features">Storage Features</a></li>
+<li><a href="./#instance-limits" title="Instance limits">Instance limits</a></li>
+<li><a href="./#general-purpose" title="General Purpose">General Purpose</a></li>
+<li><a href="./#instance-performance" title="Instance Performance">Instance Performance</a></li>
+<li><a href="./#network-performance" title="Network Performance">Network Performance</a></li>
+<li><a href="./#ssd-i/o-performance" title="SSD I/O Performance">SSD I/O Performance</a></li>
+<li><a href="./#instance-features" title="Instance Features">Instance Features</a></li>
+<li><a href="./#burstable-performance-instances" title="Burstable Performance Instances">Burstable Performance Instances</a></li>
 </ul>
 </li>
-<li>[[#Instance Purchasing Options|Instance Purchasing Options]]<ul>
-<li>[[#On-Demand Instances|On-Demand Instances]]</li>
-<li>[[#Reserved Instances|Reserved Instances]]<ul>
-<li>[[#Commitment Term|Commitment Term]]</li>
-<li>[[#Payment Options|Payment Options]]</li>
-<li>[[#Offering Classes|Offering Classes]]</li>
-<li>[[#Scope|Scope]]</li>
-<li>[[#Normalization Factor|Normalization Factor]]</li>
-<li>[[#Usage Billing|Usage Billing]]</li>
-<li>[[#Consolidated Billing|Consolidated Billing]]</li>
-<li>[[#Modifying Reserved Instances|Modifying Reserved Instances]]</li>
-<li>[[#Exchange Reserved Instances|Exchange Reserved Instances]]</li>
+<li><a href="./#instance-purchasing-options" title="Instance Purchasing Options">Instance Purchasing Options</a><ul>
+<li><a href="./#on-demand-instances" title="On-Demand Instances">On-Demand Instances</a></li>
+<li><a href="./#reserved-instances" title="Reserved Instances">Reserved Instances</a><ul>
+<li><a href="./#commitment-term" title="Commitment Term">Commitment Term</a></li>
+<li><a href="./#payment-options" title="Payment Options">Payment Options</a></li>
+<li><a href="./#offering-classes" title="Offering Classes">Offering Classes</a></li>
+<li><a href="./#scope" title="Scope">Scope</a></li>
+<li><a href="./#normalization-factor" title="Normalization Factor">Normalization Factor</a></li>
+<li><a href="./#usage-billing" title="Usage Billing">Usage Billing</a></li>
+<li><a href="./#consolidated-billing" title="Consolidated Billing">Consolidated Billing</a></li>
+<li><a href="./#modifying-reserved-instances" title="Modifying Reserved Instances">Modifying Reserved Instances</a></li>
+<li><a href="./#exchange-reserved-instances" title="Exchange Reserved Instances">Exchange Reserved Instances</a></li>
 </ul>
 </li>
-<li>[[#Spot Instances|Spot Instances]]<ul>
-<li>[[#Best Practices|Best Practices]]</li>
-<li>[[#How Spot Instances Work|How Spot Instances Work]]</li>
-<li>[[#Savings from purchasing Spot Instances|Savings from purchasing Spot Instances]]</li>
-<li>[[#Spot Instance Requests|Spot Instance Requests]]</li>
-<li>[[#Rebalance recommendations|Rebalance recommendations]]</li>
-<li>[[#Spot Instance Interruptions|Spot Instance Interruptions]]</li>
-<li>[[#Billing for interrupted spot instances|Billing for interrupted spot instances]]</li>
-<li>[[#Spot Instance data feed|Spot Instance data feed]]</li>
-<li>[[#Spot Instance limits|Spot Instance limits]]</li>
-<li>[[#Burstable Performance Instances|Burstable Performance Instances]]</li>
+<li><a href="./#spot-instances" title="Spot Instances">Spot Instances</a><ul>
+<li><a href="./#best-practices" title="Best Practices">Best Practices</a></li>
+<li><a href="./#how-spot-instances-work" title="How Spot Instances Work">How Spot Instances Work</a></li>
+<li><a href="./#savings-from-purchasing-spot-instances" title="Savings from purchasing Spot Instances">Savings from purchasing Spot Instances</a></li>
+<li><a href="./#spot-instance-requests" title="Spot Instance Requests">Spot Instance Requests</a></li>
+<li><a href="./#rebalance-recommendations" title="Rebalance recommendations">Rebalance recommendations</a></li>
+<li><a href="./#spot-instance-interruptions" title="Spot Instance Interruptions">Spot Instance Interruptions</a></li>
+<li><a href="./#billing-for-interrupted-spot-instances" title="Billing for interrupted spot instances">Billing for interrupted spot instances</a></li>
+<li><a href="./#spot-instance-data-feed" title="Spot Instance data feed">Spot Instance data feed</a></li>
+<li><a href="./#spot-instance-limits" title="Spot Instance limits">Spot Instance limits</a></li>
+<li><a href="./#burstable-performance-instances" title="Burstable Performance Instances">Burstable Performance Instances</a></li>
 </ul>
 </li>
-<li>[[#Dedicated Hosts|Dedicated Hosts]]</li>
-<li>[[#Dedicated Instances|Dedicated Instances]]</li>
-<li>[[#On-Demand Capacity Reservations|On-Demand Capacity Reservations]]</li>
+<li><a href="./#dedicated-hosts" title="Dedicated Hosts">Dedicated Hosts</a></li>
+<li><a href="./#dedicated-instances" title="Dedicated Instances">Dedicated Instances</a></li>
+<li><a href="./#on-demand-capacity-reservations" title="On-Demand Capacity Reservations">On-Demand Capacity Reservations</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li>[[#Fleets|Fleets]]<ul>
-<li>[[#EC2 Fleets|EC2 Fleets]]</li>
-<li>[[#Spot Fleets|Spot Fleets]]</li>
-<li>[[#Monitor Fleet Events|Monitor Fleet Events]]</li>
+<li><a href="./#fleets" title="Fleets">Fleets</a><ul>
+<li><a href="./#ec2-fleets" title="EC2 Fleets">EC2 Fleets</a></li>
+<li><a href="./#spot-fleets" title="Spot Fleets">Spot Fleets</a></li>
+<li><a href="./#monitor-fleet-events" title="Monitor Fleet Events">Monitor Fleet Events</a></li>
 </ul>
 </li>
-<li>[[#Monitor|Monitor]]<ul>
-<li>[[#Monitoring with CloudWatch|Monitoring with CloudWatch]]</li>
+<li><a href="./#monitor" title="Monitor">Monitor</a><ul>
+<li><a href="./#monitoring-with-cloudwatch" title="Monitoring with CloudWatch">Monitoring with CloudWatch</a></li>
 </ul>
 </li>
-<li>[[#Networking|Networking]]</li>
-<li>[[#Security|Security]]</li>
-<li>[[#Storage|Storage]]</li>
-<li>[[#Resource and tags|Resource and tags]]</li>
-<li>[[#Troubleshoot|Troubleshoot]]</li>
+<li><a href="./#networking" title="Networking">Networking</a></li>
+<li><a href="./#security" title="Security">Security</a></li>
+<li><a href="./#storage" title="Storage">Storage</a></li>
+<li><a href="./#resource-and-tags" title="Resource and tags">Resource and tags</a></li>
+<li><a href="./#troubleshoot" title="Troubleshoot">Troubleshoot</a></li>
 </ul>
 <h1 id="common-components-of-an-ec2-instance">Common components of an EC2 instance</h1>
 <ul>
@@ -1205,7 +1200,7 @@
 <li><strong>Launch Spot Instances in a VPC</strong>. Specify a subnet into which the spot instances are launched.</li>
 </ul>
 <h4 id="savings-from-purchasing-spot-instances">Savings from purchasing Spot Instances</h4>
-<p>![[spot-savings.png]]</p>
+<p><img alt="spot-savings.png" src="../spot-savingspng" title="spot-savings.png" /></p>
 <p><strong>To view the savings information for a Spot Fleet (console)</strong></p>
 <ol>
 <li>Open the Amazon EC2 console at <a href="https://console.aws.amazon.com/ec2/"></a><a href="https://console.aws.amazon.com/ec2/">https://console.aws.amazon.com/ec2/</a>.</li>
@@ -1213,7 +1208,7 @@
 <li>Select the ID of a Spot Fleet request and scroll to the <strong>Savings</strong> section. Alternatively, select the check box next to the Spot Fleet request ID and choose the <strong>Savings</strong> tab.</li>
 </ol>
 <h4 id="spot-instance-requests">Spot Instance Requests</h4>
-<p>![[spot_lifecycle.png]]</p>
+<p><img alt="spot_lifecycle.png" src="../spot_lifecyclepng" title="spot_lifecycle.png" /></p>
 <p>You can request to launch dedicated spot instances, either by specifying the tenancy in the spot request, or by requesting to launch into a VPC with an instance tenancy of <code>dedicated</code>.</p>
 <h4 id="rebalance-recommendations">Rebalance recommendations</h4>
 <p>An EC2 instance rebalance recommendation is a signal emitted when a spot instance is at increased risk of interruption. The signal can arrive sooner than the two-minute spot-instance interruption signal, giving you more time to respond to the lack of available capacity, though rapid changes in capacity mean the rebalance recommendation signal can arrive alongside the interruption signal.</p>
@@ -1354,7 +1349,7 @@ curl -H &quot;X-aws-ec2-metadata-token: $TOKEN&quot; –v &lt;http://169.254.169
 <blockquote>
 <p>Aside: this can be combined with a placement group to deploy instances that need to talk to each other while processing their workload.</p>
 </blockquote>
-<p>![[ec2-fleet.png]]</p>
+<p><img alt="ec2-fleet.png" src="../ec2-fleetpng" title="ec2-fleet.png" /></p>
 <p>There are three fleet request types</p>
 <ul>
 <li><strong>instant</strong> - EC2 Fleet places a synchronous one-time request for the desired capacity and returns the instances launched in the API response.</li>
@@ -1521,29 +1516,8 @@ supports-priv-flags: no
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
         <script src="../../js/base.js" defer></script>
-        <script src="../../search/main.js" defer></script>
 
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="searchModalLabel">Search</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            </div>
-            <div class="modal-body">
-                <p>From here you can search these documents. Enter your search terms below.</p>
-                <form>
-                    <div class="form-group">
-                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
-                    </div>
-                </form>
-                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
-            </div>
-            <div class="modal-footer">
-            </div>
-        </div>
-    </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+        <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">

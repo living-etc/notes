@@ -606,6 +606,10 @@
     <ul class="dropdown-menu">
             
 <li>
+    <a href="../../Zero%20Trust%20Networks/00%20-%20Zero%20Trust%20Networks/" class="dropdown-item">Zero Trust Networks</a>
+</li>
+            
+<li>
     <a href="../../Zero%20Trust%20Networks/01%20-%20Zero%20Trust%20Fundamentals/" class="dropdown-item">1 - Zero Trust Fundamentals</a>
 </li>
             
@@ -648,10 +652,6 @@
 <li>
     <a href="../../Zero%20Trust%20Networks/Quotes/" class="dropdown-item">Quotes</a>
 </li>
-            
-<li>
-    <a href="../../Zero%20Trust%20Networks/Zero%20Trust%20Networks/" class="dropdown-item">Zero Trust Networks</a>
-</li>
     </ul>
   </li>
                                 </ul>
@@ -688,11 +688,6 @@
                         </ul>
 
                     <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
-                                <i class="fa fa-search"></i> Search
-                            </a>
-                        </li>
                             <li class="nav-item">
                                 <a rel="prev" href="../1%20-%20Computer%20Networks%20and%20the%20Internet/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
@@ -863,7 +858,7 @@
 <p><strong>Peer to Peer architectures</strong>, on the other hand, do not rely on a single host with which to communicate, rather they communicate with other end systems running the same network application, usually laptops and desktop controlled by users. P2P architectures have the advantages of scalability, since each peer not only generates workloads for other peers in the network, but provides capacity by serving resources. The drawback to this decentralised model is performance (the network relies on the users internet connection, the quality of which will vary), reiability (the peers in the network can come and go, causing capacity and availability of shared resources to flux) and security (any peer can join the network with no credibility).</p>
 <h2 id="processes-communicating">Processes Communicating</h2>
 <p>Processes communicate across a network by sending <strong>messages</strong> to one another in pairs - a client and a server. On the web, a browser accessing a server is called the <strong>client</strong> and the <strong>server</strong> is called the server. In P2P applications, the host that is downloading a file is called the client, the one hosting it is called the server. In a P2P network, a single end system can be both a client and a server simultaneously. Generally, the process initiating the communication is called the client, and the process waiting to be contacted is called the server.</p>
-<p>![[Screenshot 2021-07-05 at 17.52.11.png]]</p>
+<p><img alt="Screenshot 2021-07-05 at 17.52.11.png" src="../../screenshot-2021-07-05-at-175211png" title="Screenshot 2021-07-05 at 17.52.11.png" /></p>
 <p>Messages enter and leave an end system through an interface called a <strong>socket</strong>. The network application pushes its message into the socket, assuming trapsorting infrastructure will be on the other side to pick it up. A socket might offer a choice of transport protocol, as well as allow the application developer to set some protocol-specific parameters, but the transportation logic is hidden away behind the socket <strong>API</strong>.</p>
 <p>In order for a message to reach its destination, it must be transmitted with two pieces of information: an <strong>IP address</strong> and a <strong>port number</strong>.</p>
 <blockquote>
@@ -914,29 +909,8 @@
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
         <script src="../../../js/base.js" defer></script>
-        <script src="../../../search/main.js" defer></script>
 
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="searchModalLabel">Search</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            </div>
-            <div class="modal-body">
-                <p>From here you can search these documents. Enter your search terms below.</p>
-                <form>
-                    <div class="form-group">
-                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
-                    </div>
-                </form>
-                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
-            </div>
-            <div class="modal-footer">
-            </div>
-        </div>
-    </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+        <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">

@@ -606,6 +606,10 @@
     <ul class="dropdown-menu">
             
 <li>
+    <a href="../00%20-%20Zero%20Trust%20Networks/" class="dropdown-item">Zero Trust Networks</a>
+</li>
+            
+<li>
     <a href="../01%20-%20Zero%20Trust%20Fundamentals/" class="dropdown-item">1 - Zero Trust Fundamentals</a>
 </li>
             
@@ -648,10 +652,6 @@
 <li>
     <a href="../Quotes/" class="dropdown-item">Quotes</a>
 </li>
-            
-<li>
-    <a href="../Zero%20Trust%20Networks/" class="dropdown-item">Zero Trust Networks</a>
-</li>
     </ul>
   </li>
                                 </ul>
@@ -688,11 +688,6 @@
                         </ul>
 
                     <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
-                                <i class="fa fa-search"></i> Search
-                            </a>
-                        </li>
                             <li class="nav-item">
                                 <a rel="prev" href="../03%20-%20Network%20Agents/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
@@ -749,9 +744,9 @@
 <h1 id="4-making-authorization-decisions">4 - Making Authorization Decisions</h1>
 <p><strong>Most of this chapter is considered state of the art, so may change in the future. That being said, the major components and their responsibilities are understood</strong></p>
 <p>The four components of a zero trust authorisation workflow are illustrated here. These are the crown jewels of a zero trust network so care must be taken with their security posture.
-![[zero trust authorisation systems.png]]</p>
+<img alt="zero trust authorisation systems.png" src="../../zero-trust-authorisation-systemspng" title="zero trust authorisation systems.png" /></p>
 <h2 id="enforcement">Enforcement</h2>
-<p>![[authorisation - enforcement.png]]</p>
+<p><img alt="authorisation - enforcement.png" src="../../authorisation---enforcementpng" title="authorisation - enforcement.png" /></p>
 <p>The enforcement component is the first part of the authorisation engine that a request will reach, and is responsible for interacting with the policy engine to make a decision on the request, and to enforce the decision made by the engine. It sits as close to the endpoint as possible to prevent the pooling of trust behind it, and this is helped by modelling the component as a client while the other authorisation components are modeled as services.</p>
 <h2 id="policy-engine">Policy Engine</h2>
 <p>The policy engine compares the requests it receives from the enforcement layer against policy and returns an authorisation decision for realisation by enforcement. These two components must always be implemented separately. The enforcement layer sits int he user path, which would expose the policy engine to undue risk if it was integrated into it.</p>
@@ -796,7 +791,7 @@
 <h3 id="exposing-scores-considered-risky">Exposing Scores Considered Risky</h3>
 <p>The trust scores should not be exposed to the end user of a system since it can help an attacker modify their behaviour to increase their trust score.</p>
 <h2 id="data-stores">Data Stores</h2>
-<p>![[authorisation - data stores.png]]</p></div>
+<p><img alt="authorisation - data stores.png" src="../../authorisation---data-storespng" title="authorisation - data stores.png" /></p></div>
             </div>
         </div>
 
@@ -809,29 +804,8 @@
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
         <script src="../../../js/base.js" defer></script>
-        <script src="../../../search/main.js" defer></script>
 
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="searchModalLabel">Search</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            </div>
-            <div class="modal-body">
-                <p>From here you can search these documents. Enter your search terms below.</p>
-                <form>
-                    <div class="form-group">
-                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
-                    </div>
-                </form>
-                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
-            </div>
-            <div class="modal-footer">
-            </div>
-        </div>
-    </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+        <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">

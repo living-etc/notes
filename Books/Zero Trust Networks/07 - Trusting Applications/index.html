@@ -606,6 +606,10 @@
     <ul class="dropdown-menu">
             
 <li>
+    <a href="../00%20-%20Zero%20Trust%20Networks/" class="dropdown-item">Zero Trust Networks</a>
+</li>
+            
+<li>
     <a href="../01%20-%20Zero%20Trust%20Fundamentals/" class="dropdown-item">1 - Zero Trust Fundamentals</a>
 </li>
             
@@ -648,10 +652,6 @@
 <li>
     <a href="../Quotes/" class="dropdown-item">Quotes</a>
 </li>
-            
-<li>
-    <a href="../Zero%20Trust%20Networks/" class="dropdown-item">Zero Trust Networks</a>
-</li>
     </ul>
   </li>
                                 </ul>
@@ -688,11 +688,6 @@
                         </ul>
 
                     <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
-                                <i class="fa fa-search"></i> Search
-                            </a>
-                        </li>
                             <li class="nav-item">
                                 <a rel="prev" href="../06%20-%20Trusting%20Users/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
@@ -827,7 +822,7 @@
 <p>Applications can be authorised using the secrets they need. All applications need some sort of secret in order to do their job, whether it's a certificate, api key, etc, and they will retrieve them on startup. By generating these secrets on demand as the instances are launched, and setting a time limit on them, we can assert on exactly what is running in our estate since we know the number of secerts we generated. who we generated them for and how long they last.</p>
 <h4 id="trusted-third-parties-in-instance-authorization">Trusted third parties in instance authorization</h4>
 <p>Rather than giving the deployment service direct access to secrets, we can instead of a secret manager holding the secrets as a trusted third party. The deployment service can notify the secret manager of the impending deployment, authorising the creation and release of new secrets. The instances can then retrieve these secrets after they launch.</p>
-<p>![[Trusted third parties in instance authorization.png]]</p>
+<p><img alt="Trusted third parties in instance authorization.png" src="../../trusted-third-parties-in-instance-authorizationpng" title="Trusted third parties in instance authorization.png" /></p>
 <h2 id="runtime-security">Runtime Security</h2>
 <h3 id="secure-coding-practices">Secure Coding Practices</h3>
 <p>It's not feasible to act reactively to security vulnerabilities, only fixing them after they have been discovered. Developers need to be proactive in preventing them in the first place using secure coding techniques. This can take the form of using libraries that don't trust user input and sanitise it before acting on it, such as in database queries.</p>
@@ -860,29 +855,8 @@
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
         <script src="../../../js/base.js" defer></script>
-        <script src="../../../search/main.js" defer></script>
 
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="searchModalLabel">Search</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            </div>
-            <div class="modal-body">
-                <p>From here you can search these documents. Enter your search terms below.</p>
-                <form>
-                    <div class="form-group">
-                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
-                    </div>
-                </form>
-                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
-            </div>
-            <div class="modal-footer">
-            </div>
-        </div>
-    </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+        <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">

@@ -606,6 +606,10 @@
     <ul class="dropdown-menu">
             
 <li>
+    <a href="../../Zero%20Trust%20Networks/00%20-%20Zero%20Trust%20Networks/" class="dropdown-item">Zero Trust Networks</a>
+</li>
+            
+<li>
     <a href="../../Zero%20Trust%20Networks/01%20-%20Zero%20Trust%20Fundamentals/" class="dropdown-item">1 - Zero Trust Fundamentals</a>
 </li>
             
@@ -648,10 +652,6 @@
 <li>
     <a href="../../Zero%20Trust%20Networks/Quotes/" class="dropdown-item">Quotes</a>
 </li>
-            
-<li>
-    <a href="../../Zero%20Trust%20Networks/Zero%20Trust%20Networks/" class="dropdown-item">Zero Trust Networks</a>
-</li>
     </ul>
   </li>
                                 </ul>
@@ -688,11 +688,6 @@
                         </ul>
 
                     <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
-                                <i class="fa fa-search"></i> Search
-                            </a>
-                        </li>
                             <li class="nav-item">
                                 <a rel="prev" href="../4%20-%20The%20Network%20Layer%20-%20The%20Data%20Plane/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
@@ -751,7 +746,7 @@
 - <strong>Determine the "best" routes to the prefixes</strong>. A router will use reachability information as well as policy information to determine the best route to  specific prefix when two or more are available.</p>
 <h2 id="advertising-bgp-route-information">Advertising BGP Route Information</h2>
 <p>Consider the network shown below:
-![[Screenshot 2021-12-11 at 17.24.57.png]]</p>
+<img alt="Screenshot 2021-12-11 at 17.24.57.png" src="../../screenshot-2021-12-11-at-172457png" title="Screenshot 2021-12-11 at 17.24.57.png" /></p>
 <p>The <strong>gateway routers</strong> in the ASs send messages to each other to announce routes to the different ASs they know about. These gateway routers connect the AS to other ASs, while <strong>internal routers</strong> only connect to hosts within the AS.</p>
 <p>Routing information is exchanged over semi-permanent TCP connections, called <strong>BGP connections</strong>, using port 179. A BGP connection spanning two ASs is called an <strong>external BGP connection (eBGP)</strong> while such a connection between hosts in the same AS is called an <strong>internal BGP connection (iBGP)</strong>.</p>
 <p>In the diagram above, routing announcements travel over both external and internal BGP connections so that each router knows about the routes between the three ASs.</p>
@@ -776,29 +771,8 @@
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
         <script src="../../../js/base.js" defer></script>
-        <script src="../../../search/main.js" defer></script>
 
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="searchModalLabel">Search</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            </div>
-            <div class="modal-body">
-                <p>From here you can search these documents. Enter your search terms below.</p>
-                <form>
-                    <div class="form-group">
-                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
-                    </div>
-                </form>
-                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
-            </div>
-            <div class="modal-footer">
-            </div>
-        </div>
-    </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+        <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">

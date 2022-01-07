@@ -606,6 +606,10 @@
     <ul class="dropdown-menu">
             
 <li>
+    <a href="../00%20-%20Zero%20Trust%20Networks/" class="dropdown-item">Zero Trust Networks</a>
+</li>
+            
+<li>
     <a href="../01%20-%20Zero%20Trust%20Fundamentals/" class="dropdown-item">1 - Zero Trust Fundamentals</a>
 </li>
             
@@ -648,10 +652,6 @@
 <li>
     <a href="../Quotes/" class="dropdown-item">Quotes</a>
 </li>
-            
-<li>
-    <a href="../Zero%20Trust%20Networks/" class="dropdown-item">Zero Trust Networks</a>
-</li>
     </ul>
   </li>
                                 </ul>
@@ -688,11 +688,6 @@
                         </ul>
 
                     <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
-                                <i class="fa fa-search"></i> Search
-                            </a>
-                        </li>
                             <li class="nav-item">
                                 <a rel="prev" href="../04%20-%20Making%20Authorisation%20Decisions/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
@@ -765,7 +760,7 @@
 <p>Once the certificate has been generated and provisioned, its corresponding private key must also be protected. The most effective way to do this is with either Hardware Security Module (HSM) or Trusted Platform Module (TPM), components of the hardware that carry out cryptographic operations. The private key is stored in this module, and the operating system has no access to it, making it very difficult to steal the private key.</p>
 <h3 id="identity-and-security-in-static-and-dynamic-systems">Identity and Security in Static and Dynamic Systems</h3>
 <p>The process for signing certificates is one that must be secured so unauthorized certificates are not being generated. Having a human involed to approve a signing/provisioning workflow works well enough in a static environment.
-![[authorisation - certificate signing - manual.png]]</p>
+<img alt="authorisation - certificate signing - manual.png" src="../../authorisation---certificate-signing---manualpng" title="authorisation - certificate signing - manual.png" /></p>
 <p>In dynamic environments, where systems scale up and down on their own, this process must be automated. In a static environment, the trust needed to sign the certificates was sourced from the human operator, but that isn't possible in an environment where the process is entirely automated.</p>
 <p>One option is to bake generic authentication material into the device image which is used to securely communicate with a signing service to generate a device-specific certificate. In this way, trust is now derived from the image in the absence of a human operator.</p>
 <p>Another source of trust is the resource manager, the system that launched the new devices. It's always able to assert "yes, i launched this device and here is everything I know about it". This information can be passed to the signing service.</p>
@@ -831,29 +826,8 @@
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
         <script src="../../../js/base.js" defer></script>
-        <script src="../../../search/main.js" defer></script>
 
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="searchModalLabel">Search</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            </div>
-            <div class="modal-body">
-                <p>From here you can search these documents. Enter your search terms below.</p>
-                <form>
-                    <div class="form-group">
-                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
-                    </div>
-                </form>
-                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
-            </div>
-            <div class="modal-footer">
-            </div>
-        </div>
-    </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+        <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">

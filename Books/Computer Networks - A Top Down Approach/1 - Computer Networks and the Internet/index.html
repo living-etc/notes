@@ -606,6 +606,10 @@
     <ul class="dropdown-menu">
             
 <li>
+    <a href="../../Zero%20Trust%20Networks/00%20-%20Zero%20Trust%20Networks/" class="dropdown-item">Zero Trust Networks</a>
+</li>
+            
+<li>
     <a href="../../Zero%20Trust%20Networks/01%20-%20Zero%20Trust%20Fundamentals/" class="dropdown-item">1 - Zero Trust Fundamentals</a>
 </li>
             
@@ -648,10 +652,6 @@
 <li>
     <a href="../../Zero%20Trust%20Networks/Quotes/" class="dropdown-item">Quotes</a>
 </li>
-            
-<li>
-    <a href="../../Zero%20Trust%20Networks/Zero%20Trust%20Networks/" class="dropdown-item">Zero Trust Networks</a>
-</li>
     </ul>
   </li>
                                 </ul>
@@ -688,11 +688,6 @@
                         </ul>
 
                     <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
-                                <i class="fa fa-search"></i> Search
-                            </a>
-                        </li>
                             <li class="nav-item">
                                 <a rel="prev" href="../../Coaching%20and%20Mentoring%20for%20Dummies/Coaching%20and%20Mentoring%20for%20Dummies/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
@@ -835,18 +830,18 @@
 <p>On the customer side, a splitter separates the phone and internet signals while on the telco side a DSLAM (Digital subscriber line access multiplexer) separates them.</p>
 <p>A DSLAM is a device that interfaces the multiple networks of the internet and telephone lines with the single connection of the residential internet connection. It takes multiplexed signals from the residential end and separates them for use on separate telephone and internet networks. Conversely, it takes the separate signals from the telephone and internet networks and combines (multiplexes) them for transmission along the residential DSL connection.</p>
 <p>Thousands of homes can be connected to a single DSLAM
-![[dsl.jpg]]</p>
+<img alt="dsl.jpg" src="../../dsljpg" title="dsl.jpg" /></p>
 <h3 id="home-access-cable">Home Access: Cable</h3>
 <p>One of two forms of residential internet connection that is provided by a customer's cable television provider.
-![[cable.jpg]]</p>
+<img alt="cable.jpg" src="../../cablejpg" title="cable.jpg" /></p>
 <p>Cable Modem Termination System (CMTS) - equivalent to a DSLAM on a DSL internet connection. A device located in the cable head end of a cable TV network. It takes the analogue signal received from a the cable modem in a downstream home and turns it into a digital signal.</p>
 <p>Data Over Cable Service Interface Specification (DOCSIS) - An international telecommunications standard that permits a higher data transfer rate over existing cable television networks. Each new version of this standard defines a higher data transfer rate.</p>
 <h3 id="home-access-fibre-to-the-home-ftth">Home Access: Fibre To The Home (FTTH)</h3>
-<p>![[fibre to the home.jpg]]</p>
+<p><img alt="fibre to the home.jpg" src="../../fibre-to-the-homejpg" title="fibre to the home.jpg" /></p>
 <p>Optical Line Terminator (OLT) - The Fibre To The Home (FTTH) equivalent of the DSLAM on a DSL network or a CMTS in a cable internet network.</p>
 <p>Optical Network Terminator (ONT) - The equivalent of the router in a Fibre To The Home (FTTH) network.</p>
 <h3 id="enterprise-access-ethernet">Enterprise Access: Ethernet</h3>
-<p>![[ethernet.jpg]]</p>
+<p><img alt="ethernet.jpg" src="../../ethernetjpg" title="ethernet.jpg" /></p>
 <h1 id="the-network-core">The Network Core</h1>
 <p>The part of a network that includes the switching and routing components. This part of the network is responsible for routing traffic between different end systems on the network edge. For example, traffic will leave a smartphone on the edge, travel through the routing infrastructure of the core, and arrive at a server on another part pf the edge.</p>
 <p>Edge Router - A router on the edge of the Network Core. This router is the first router through which traffic from an end system will travel on its way to its destination.
@@ -867,7 +862,7 @@
 <p>The end-to-end delay in transmitting this entire message is</p>
 <p>$d_{end-to-end}=N(L/R)$</p>
 <h3 id="queuing-delays-and-packet-loss">Queuing Delays and Packet Loss</h3>
-<p>![[queuing delays and packet loss.jpg]]</p>
+<p><img alt="queuing delays and packet loss.jpg" src="../../queuing-delays-and-packet-lossjpg" title="queuing delays and packet loss.jpg" /></p>
 <p>The output buffer of a packet switch is the queue where packets wait to be transmitted. If a packet is ready to be transmitted, but the output link is busy, it will wait in the queue.</p>
 <p>If the queue is full, then either the packet in question, or one of the already queued packets, will be dropped, leading to packet loss.</p>
 <h3 id="forwarding-tables-and-routing-protocols">Forwarding Tables and Routing Protocols</h3>
@@ -876,13 +871,13 @@
 <h2 id="circuit-switching">Circuit Switching</h2>
 <p>A type of network where an end-to-end connection between the source and destination is established before a message is sent. The resources between the source and destination (switches and links) along the path have a portion of their capacity reserved for the transmission of the message.</p>
 <p>Contrast this with a Packet-Switched Network, such as the Internet, where packets are sent onto the network without resources specifically allocated to it, and the network endeavors to get the packets to their destination as fast as possible, or at all.</p>
-<p>![[circuit switching.jpg]]</p>
+<p><img alt="circuit switching.jpg" src="../../circuit-switchingjpg" title="circuit switching.jpg" /></p>
 <h3 id="multiplexing-in-circuit-switched-networks">Multiplexing in Circuit-Switched Networks</h3>
 <ul>
 <li>Frequency-Division Multiplexing - The bandwidth of the link is divided into individual bands for the exclusive use of the connections</li>
 <li>Time-Division Multiplexing - Each connection is allocated time slots during which its data will be transmitted across the link</li>
 </ul>
-<p>![[multiplexing in circuit-switched networks.jpg]]</p>
+<p><img alt="multiplexing in circuit-switched networks.jpg" src="../../multiplexing-in-circuit-switched-networksjpg" title="multiplexing in circuit-switched networks.jpg" /></p>
 <p>The difference between these two forms of multiplexing is that with FDM, each circuit gets a fraction of the bandwidth all of the time, whereas with TDM, each circuit gets all of the bandwidth for a fraction of the time.</p>
 <h3 id="circuit-switching-vs-packet-switching">Circuit Switching vs Packet Switching</h3>
 <p>Drawbacks of circuit switching:</p>
@@ -907,7 +902,7 @@
 <table>
 <thead>
 <tr>
-<th>![[interconnection-of-isps.jpg]]</th>
+<th><img alt="interconnection-of-isps.jpg" src="../../interconnection-of-ispsjpg" title="interconnection-of-isps.jpg" /></th>
 </tr>
 </thead>
 <tbody>
@@ -929,7 +924,7 @@
 <p>A content-provider network allows a content provider to better control how its content is distributed to end systems.</p>
 <h1 id="delay-loss-and-throughput-in-packet-switched-networks">Delay, Loss, and Throughput in Packet-Switched Networks</h1>
 <h2 id="overview-of-delay-in-packet-switched-networks">Overview of Delay in Packet-Switched Networks</h2>
-<p>![[delay in packet switched networks.jpg]]</p>
+<p><img alt="delay in packet switched networks.jpg" src="../../delay-in-packet-switched-networksjpg" title="delay in packet switched networks.jpg" /></p>
 <p>As a packet passes through the nodes along it's path, it suffers the following types of delay at each node:</p>
 <ul>
 <li><strong>nodal processing delay</strong> - the delay added by inspecting the headers of the packet to determine it's destination. Error checking the integrity of the packet also contributes to this delay. Typically on the order of microseconds in high-speed router.</li>
@@ -953,7 +948,7 @@
 <table>
 <thead>
 <tr>
-<th>![[average queing delay as a function of traffic intensity.jpg]]</th>
+<th><img alt="average queing delay as a function of traffic intensity.jpg" src="../../average-queing-delay-as-a-function-of-traffic-intensityjpg" title="average queing delay as a function of traffic intensity.jpg" /></th>
 </tr>
 </thead>
 <tbody>
@@ -977,7 +972,7 @@
 <table>
 <thead>
 <tr>
-<th>![[protocol layers as an airline flight.jpg]]</th>
+<th><img alt="protocol layers as an airline flight.jpg" src="../../protocol-layers-as-an-airline-flightjpg" title="protocol layers as an airline flight.jpg" /></th>
 </tr>
 </thead>
 <tbody>
@@ -986,7 +981,7 @@
 </tr>
 </tbody>
 </table>
-<p>![[five and seven layer models.jpg]]</p>
+<p><img alt="five and seven layer models.jpg" src="../../five-and-seven-layer-modelsjpg" title="five and seven layer models.jpg" /></p>
 <h2 id="layered-architecture">Layered Architecture</h2>
 <p><strong>Application Layer</strong></p>
 <p>The layer where network applications live. Protocols such as HTTP and FTP are implemented here, and applications such as DNS run here. Packets in this layer are called <strong>messages</strong>.</p>
@@ -1013,7 +1008,7 @@
 <table>
 <thead>
 <tr>
-<th>![[encapsulation.jpg]]</th>
+<th><img alt="encapsulation.jpg" src="../../encapsulationjpg" title="encapsulation.jpg" /></th>
 </tr>
 </thead>
 <tbody>
@@ -1041,29 +1036,8 @@
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
         <script src="../../../js/base.js" defer></script>
-        <script src="../../../search/main.js" defer></script>
 
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="searchModalLabel">Search</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            </div>
-            <div class="modal-body">
-                <p>From here you can search these documents. Enter your search terms below.</p>
-                <form>
-                    <div class="form-group">
-                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
-                    </div>
-                </form>
-                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
-            </div>
-            <div class="modal-footer">
-            </div>
-        </div>
-    </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+        <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
