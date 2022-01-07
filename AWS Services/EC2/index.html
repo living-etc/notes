@@ -1,0 +1,1588 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>EC2 - Chris' Notes</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Chris' Notes</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Chris' Notes</a>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">AWS Services <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../Config/" class="dropdown-item">Config</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">EC2</a>
+</li>
+                                    
+<li>
+    <a href="../Global%20Accelerator/" class="dropdown-item">Components</a>
+</li>
+                                    
+<li>
+    <a href="../Guard%20Duty/" class="dropdown-item">Guard Duty</a>
+</li>
+                                    
+<li>
+    <a href="../Inspector/" class="dropdown-item">Inspector</a>
+</li>
+                                    
+<li>
+    <a href="../Security%20Hub/" class="dropdown-item">Security Hub</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Books <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">97 Things Every Cloud Engineer Should Know</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../Books/97%20Things%20Every%20Cloud%20Engineer%20Should%20Know/97%20Things%20Every%20Cloud%20Engineer%20Should%20Know/" class="dropdown-item">Contents</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">97 Things Every SRE Should Know</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../Books/97%20Things%20Every%20SRE%20Should%20Know/97%20Things%20Every%20SRE%20Should%20Know/" class="dropdown-item">Contents</a>
+</li>
+            
+<li>
+    <a href="../../Books/97%20Things%20Every%20SRE%20Should%20Know/Quotes/" class="dropdown-item">Quotes</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">A World Without Work</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../Books/A%20World%20Without%20Work/1.%20A%20History%20of%20Misplaced%20Anxiety/" class="dropdown-item">1. A History of Misplaced Anxiety</a>
+</li>
+            
+<li>
+    <a href="../../Books/A%20World%20Without%20Work/2.%20The%20Age%20of%20Labour/" class="dropdown-item">2. The Age of Labour</a>
+</li>
+            
+<li>
+    <a href="../../Books/A%20World%20Without%20Work/3.%20The%20Pragmatist%20Revolution/" class="dropdown-item">3. The Pragmatist Revolution</a>
+</li>
+            
+<li>
+    <a href="../../Books/A%20World%20Without%20Work/4.%20Underestimating%20Machines/" class="dropdown-item">4. Underestimating Machines</a>
+</li>
+            
+<li>
+    <a href="../../Books/A%20World%20Without%20Work/5.%20Task%20Encroachment/" class="dropdown-item">5. Task Encroachment</a>
+</li>
+            
+<li>
+    <a href="../../Books/A%20World%20Without%20Work/6.%20Frictional%20Technological%20Unemployment/" class="dropdown-item">6. Frictional Technological Unemployment</a>
+</li>
+            
+<li>
+    <a href="../../Books/A%20World%20Without%20Work/A%20World%20Without%20Work/" class="dropdown-item">Contents</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Atomic Habits</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../Books/Atomic%20Habits/Atomic%20Habits/" class="dropdown-item">Atomic Habits</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Coaching and Mentoring for Dummies</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../Books/Coaching%20and%20Mentoring%20for%20Dummies/1.%20Get%20Off%20The%20Bench%20And%20Be%20The%20Coach/" class="dropdown-item">In This Chapter</a>
+</li>
+            
+<li>
+    <a href="../../Books/Coaching%20and%20Mentoring%20for%20Dummies/10.%20Taking%20Them%20Under%20Your%20Wing/" class="dropdown-item">10. Taking Them Under Your Wing</a>
+</li>
+            
+<li>
+    <a href="../../Books/Coaching%20and%20Mentoring%20for%20Dummies/11.%20Motivation%2C%20Not%20Inspiration%20Or%20Perspiration/" class="dropdown-item">11. Motivation, Not Inspiration Or Perspiration</a>
+</li>
+            
+<li>
+    <a href="../../Books/Coaching%20and%20Mentoring%20for%20Dummies/12.%20Seven%20Practical%20Strategies%20To%20Motivate%20Employees/" class="dropdown-item">12. Seven Practical Strategies To Motivate Employees</a>
+</li>
+            
+<li>
+    <a href="../../Books/Coaching%20and%20Mentoring%20for%20Dummies/13.%20Don%27t%20Try%20To%20Do%20It%20All%20Yourself%20-%20Delegate/" class="dropdown-item">13. Don't Try To Do It All Yourself   Delegate</a>
+</li>
+            
+<li>
+    <a href="../../Books/Coaching%20and%20Mentoring%20for%20Dummies/14.%20Knowing%20When%20-%20And%20How%20-%20To%20Train/" class="dropdown-item">14. Knowing When   And How   To Train</a>
+</li>
+            
+<li>
+    <a href="../../Books/Coaching%20and%20Mentoring%20for%20Dummies/15.%20Building%20Career%20Self-Reliance/" class="dropdown-item">15. Building Career Self Reliance</a>
+</li>
+            
+<li>
+    <a href="../../Books/Coaching%20and%20Mentoring%20for%20Dummies/16.%20Making%20The%20Plan%20-%20Coaching%20For%20Development/" class="dropdown-item">16. Making The Plan   Coaching For Development</a>
+</li>
+            
+<li>
+    <a href="../../Books/Coaching%20and%20Mentoring%20for%20Dummies/17.%20Ten%20Coaching%20Myths/" class="dropdown-item">In The Chapter</a>
+</li>
+            
+<li>
+    <a href="../../Books/Coaching%20and%20Mentoring%20for%20Dummies/18.%20Ten%20Skills%20That%20Strengthen%20Your%20Foundation%20For%20Coaching/" class="dropdown-item">18. Ten Skills That Strengthen Your Foundation For Coaching</a>
+</li>
+            
+<li>
+    <a href="../../Books/Coaching%20and%20Mentoring%20for%20Dummies/19.%20Ten%20Management%20Behaviours%20To%20Avoid/" class="dropdown-item">19. Ten Management Behaviours To Avoid</a>
+</li>
+            
+<li>
+    <a href="../../Books/Coaching%20and%20Mentoring%20for%20Dummies/2.%20Laying%20A%20Foundation%20That%20Builds%20Commitment/" class="dropdown-item">In This Chapter</a>
+</li>
+            
+<li>
+    <a href="../../Books/Coaching%20and%20Mentoring%20for%20Dummies/20.%20Ten%20%28er%2C%2050%29%20Ways%20To%20Build%20Commitment%20Through%20Coaching/" class="dropdown-item">20. Ten (er, 50) Ways To Build Commitment Through Coaching</a>
+</li>
+            
+<li>
+    <a href="../../Books/Coaching%20and%20Mentoring%20for%20Dummies/3.%20Coaching%20And%20Managing%20Diversity/" class="dropdown-item">In This Chapter</a>
+</li>
+            
+<li>
+    <a href="../../Books/Coaching%20and%20Mentoring%20for%20Dummies/4.%20Finding%20The%20Time%20To%20Stay%20Connected/" class="dropdown-item">In This Chapter</a>
+</li>
+            
+<li>
+    <a href="../../Books/Coaching%20and%20Mentoring%20for%20Dummies/5.%20Giving%20Constructive%20Feedback%2C%20Not%20Praise%20And%20Criticism/" class="dropdown-item">In This Chapter</a>
+</li>
+            
+<li>
+    <a href="../../Books/Coaching%20and%20Mentoring%20for%20Dummies/6.%20Setting%20Performance%20Plans%20The%20Smart%20Way/" class="dropdown-item">6. Setting Performance Plans The Smart Way</a>
+</li>
+            
+<li>
+    <a href="../../Books/Coaching%20and%20Mentoring%20for%20Dummies/7.%20Taking%20The%20Blues%20Out%20Of%20Reviews/" class="dropdown-item">7. Taking The Blues Out Of Reviews</a>
+</li>
+            
+<li>
+    <a href="../../Books/Coaching%20and%20Mentoring%20for%20Dummies/8.%20The%20Dos%20And%20Don%27ts%20Of%20Mentoring%20And%20Tutoring/" class="dropdown-item">8. The Dos And Don'ts Of Mentoring And Tutoring</a>
+</li>
+            
+<li>
+    <a href="../../Books/Coaching%20and%20Mentoring%20for%20Dummies/9.%20Don%27t%20Tell%2C%20But%20Do%20Ask%20-%20Tutoring%20With%20Questions/" class="dropdown-item">9. Don't Tell, But Do Ask   Tutoring With Questions</a>
+</li>
+            
+<li>
+    <a href="../../Books/Coaching%20and%20Mentoring%20for%20Dummies/Coaching%20and%20Mentoring%20for%20Dummies/" class="dropdown-item">Contents</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Computer Networks   A Top Down Approach</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../Books/Computer%20Networks%20-%20A%20Top%20Down%20Approach/1%20-%20Computer%20Networks%20and%20the%20Internet/" class="dropdown-item">What is the Internet?</a>
+</li>
+            
+<li>
+    <a href="../../Books/Computer%20Networks%20-%20A%20Top%20Down%20Approach/2%20-%20Application%20Layer/" class="dropdown-item">Principles of Network Applications</a>
+</li>
+            
+<li>
+    <a href="../../Books/Computer%20Networks%20-%20A%20Top%20Down%20Approach/3%20-%20Transport%20Layer/" class="dropdown-item">3   Transport Layer</a>
+</li>
+            
+<li>
+    <a href="../../Books/Computer%20Networks%20-%20A%20Top%20Down%20Approach/4%20-%20The%20Network%20Layer%20-%20The%20Data%20Plane/" class="dropdown-item">4   The Network Layer   The Data Plane</a>
+</li>
+            
+<li>
+    <a href="../../Books/Computer%20Networks%20-%20A%20Top%20Down%20Approach/5%20-%20The%20Network%20Layer%20-%20Control%20Plane/" class="dropdown-item">Routing Among the ISPs: BGP</a>
+</li>
+            
+<li>
+    <a href="../../Books/Computer%20Networks%20-%20A%20Top%20Down%20Approach/6%20-%20The%20Link%20Layer%20and%20LANs/" class="dropdown-item">6   The Link Layer and LANs</a>
+</li>
+            
+<li>
+    <a href="../../Books/Computer%20Networks%20-%20A%20Top%20Down%20Approach/7%20-%20Wireless%20and%20Mobile%20Networks/" class="dropdown-item">7   Wireless and Mobile Networks</a>
+</li>
+            
+<li>
+    <a href="../../Books/Computer%20Networks%20-%20A%20Top%20Down%20Approach/8%20-%20Security%20in%20Computer%20Networks/" class="dropdown-item">8   Security in Computer Networks</a>
+</li>
+            
+<li>
+    <a href="../../Books/Computer%20Networks%20-%20A%20Top%20Down%20Approach/9%20-%20Multimedia%20Networking/" class="dropdown-item">9   Multimedia Networking</a>
+</li>
+            
+<li>
+    <a href="../../Books/Computer%20Networks%20-%20A%20Top%20Down%20Approach/Computer%20Networks%20-%20A%20Top%20Down%20Approach/" class="dropdown-item">Contents</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Drive   The Surprising Truth About What Motivates Us</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../Books/Drive%20-%20The%20Surprising%20Truth%20About%20What%20Motivates%20Us/Drive%20-%20The%20Surprising%20Truth%20About%20What%20Motivates%20Us/" class="dropdown-item">Drive   The Surprising Truth About What Motivates Us</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Getting Things Done</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../Books/Getting%20Things%20Done/1.%20A%20New%20Practice%20For%20A%20New%20Reality/" class="dropdown-item">1. A New Practice For A New Reality</a>
+</li>
+            
+<li>
+    <a href="../../Books/Getting%20Things%20Done/10.%20Getting%20Projects%20Under%20Control/" class="dropdown-item">10. Getting Projects Under Control</a>
+</li>
+            
+<li>
+    <a href="../../Books/Getting%20Things%20Done/11.%20The%20Power%20of%20the%20Capturing%20Habit/" class="dropdown-item">11. The Power of the Capturing Habit</a>
+</li>
+            
+<li>
+    <a href="../../Books/Getting%20Things%20Done/12.%20The%20Power%20of%20the%20Next-Action%20Decision/" class="dropdown-item">12. The Power of the Next Action Decision</a>
+</li>
+            
+<li>
+    <a href="../../Books/Getting%20Things%20Done/13.%20The%20Power%20of%20Outcome-Focusing/" class="dropdown-item">13. The Power of Outcome Focusing</a>
+</li>
+            
+<li>
+    <a href="../../Books/Getting%20Things%20Done/14.%20GTD%20and%20Cognitive%20Science/" class="dropdown-item">14. GTD and Cognitive Science</a>
+</li>
+            
+<li>
+    <a href="../../Books/Getting%20Things%20Done/15.%20The%20Path%20of%20GTD%20Mastery/" class="dropdown-item">15. The Path of GTD Mastery</a>
+</li>
+            
+<li>
+    <a href="../../Books/Getting%20Things%20Done/2.%20Getting%20Control%20of%20Your%20Life%20-%20The%20Five%20Steps%20of%20Mastering%20Workflow/" class="dropdown-item">2. Getting Control of Your Life   The Five Steps of Mastering Workflow</a>
+</li>
+            
+<li>
+    <a href="../../Books/Getting%20Things%20Done/3.%20Getting%20Projects%20Creatively%20Under%20Way%20-%20The%20Five%20Phases%20of%20Project%20Planning/" class="dropdown-item">3. Getting Projects Creatively Under Way   The Five Phases of Project Planning</a>
+</li>
+            
+<li>
+    <a href="../../Books/Getting%20Things%20Done/4.%20Getting%20Things%20Started%20-%20Setting%20Up%20Time%2C%20Space%20and%20Tools/" class="dropdown-item">4. Getting Things Started   Setting Up Time, Space and Tools</a>
+</li>
+            
+<li>
+    <a href="../../Books/Getting%20Things%20Done/5.%20Capturing%20-%20Corralling%20Your%20%22Stuff%22/" class="dropdown-item">5. Capturing   Corralling Your "Stuff"</a>
+</li>
+            
+<li>
+    <a href="../../Books/Getting%20Things%20Done/6.%20Clarifying%20-%20Getting%20%22In%22%20to%20Empty/" class="dropdown-item">6. Clarifying   Getting "In" to Empty</a>
+</li>
+            
+<li>
+    <a href="../../Books/Getting%20Things%20Done/7.%20Organising%20-%20Setting%20Up%20The%20Right%20Buckets/" class="dropdown-item">7. Organising   Setting Up The Right Buckets</a>
+</li>
+            
+<li>
+    <a href="../../Books/Getting%20Things%20Done/8.%20Reflecting%20-%20Keeping%20it%20all%20Fresh%20and%20Functional/" class="dropdown-item">8. Reflecting   Keeping it all Fresh and Functional</a>
+</li>
+            
+<li>
+    <a href="../../Books/Getting%20Things%20Done/9.%20Engaging%20-%20Making%20The%20Best%20Action%20Choices/" class="dropdown-item">9. Engaging   Making The Best Action Choices</a>
+</li>
+            
+<li>
+    <a href="../../Books/Getting%20Things%20Done/Getting%20Things%20Done/" class="dropdown-item">Contents</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">How To Win Friends And Influence People</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../Books/How%20To%20Win%20Friends%20And%20Influence%20People/How%20To%20Win%20Friends%20And%20Influence%20People/" class="dropdown-item">Contents</a>
+</li>
+            
+<li>
+    <a href="../../Books/How%20To%20Win%20Friends%20And%20Influence%20People/Part%201%20-%20Fundamental%20Techniques%20In%20Handling%20People/" class="dropdown-item">Chapter 1: If You Want To Gather Honey, Don't Kick Over The Beehive</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Ikigai   The Japanese Secret to a Long and Happy Life</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../Books/Ikigai%20-%20The%20Japanese%20Secret%20to%20a%20Long%20and%20Happy%20Life/Ikigai%20-%20The%20Japanese%20Secret%20to%20a%20Long%20and%20Happy%20Life/" class="dropdown-item">Ikigai   The Japanese Secret to a Long and Happy Life</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Show Your Work</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../Books/Show%20Your%20Work/Show%20Your%20Work/" class="dropdown-item">Show Your Work</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Storyworthy</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../Books/Storyworthy/2.%20What%20Is%20A%20Story/" class="dropdown-item">2. What Is A Story</a>
+</li>
+            
+<li>
+    <a href="../../Books/Storyworthy/3.%20Homework%20For%20Life/" class="dropdown-item">3. Homework For Life</a>
+</li>
+            
+<li>
+    <a href="../../Books/Storyworthy/Storyworthy/" class="dropdown-item">Contents</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Stumbling on Happiness</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../Books/Stumbling%20on%20Happiness/1.%20Journey%20to%20Elsewhen/" class="dropdown-item">1. Journey to Elsewhen</a>
+</li>
+            
+<li>
+    <a href="../../Books/Stumbling%20on%20Happiness/10.%20Once%20Bitten/" class="dropdown-item">10. Once Bitten</a>
+</li>
+            
+<li>
+    <a href="../../Books/Stumbling%20on%20Happiness/11.%20Reporting%20Live%20From%20Tomorrow/" class="dropdown-item">11. Reporting Live From Tomorrow</a>
+</li>
+            
+<li>
+    <a href="../../Books/Stumbling%20on%20Happiness/2.%20The%20View%20From%20In%20Here/" class="dropdown-item">2. The View From In Here</a>
+</li>
+            
+<li>
+    <a href="../../Books/Stumbling%20on%20Happiness/3.%20Outside%20Looking%20In/" class="dropdown-item">3. Outside Looking In</a>
+</li>
+            
+<li>
+    <a href="../../Books/Stumbling%20on%20Happiness/4.%20In%20The%20Blind%20Spot%20Of%20Your%20Minds%20Eye/" class="dropdown-item">4. In The Blind Spot Of Your Minds Eye</a>
+</li>
+            
+<li>
+    <a href="../../Books/Stumbling%20on%20Happiness/5.%20The%20Hound%20Of%20Silence/" class="dropdown-item">5. The Hound Of Silence</a>
+</li>
+            
+<li>
+    <a href="../../Books/Stumbling%20on%20Happiness/6.%20The%20Future%20Is%20Now/" class="dropdown-item">6. The Future Is Now</a>
+</li>
+            
+<li>
+    <a href="../../Books/Stumbling%20on%20Happiness/7.%20Time%20Bombs/" class="dropdown-item">7. Time Bombs</a>
+</li>
+            
+<li>
+    <a href="../../Books/Stumbling%20on%20Happiness/8.%20Paradise%20Glossed/" class="dropdown-item">8. Paradise Glossed</a>
+</li>
+            
+<li>
+    <a href="../../Books/Stumbling%20on%20Happiness/9.%20Immune%20To%20Reality/" class="dropdown-item">9. Immune To Reality</a>
+</li>
+            
+<li>
+    <a href="../../Books/Stumbling%20on%20Happiness/Stumbling%20on%20Happiness/" class="dropdown-item">Contents</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Team Topologies</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../Books/Team%20Topologies/1.%20The%20Problem%20with%20Org%20Charts/" class="dropdown-item">1. The Problem with Org Charts</a>
+</li>
+            
+<li>
+    <a href="../../Books/Team%20Topologies/2.%20Conways%20Law%20and%20Why%20it%20Matters/" class="dropdown-item">2. Conways Law and Why it Matters</a>
+</li>
+            
+<li>
+    <a href="../../Books/Team%20Topologies/3.%20Team-First%20Thinking/" class="dropdown-item">3. Team First Thinking</a>
+</li>
+            
+<li>
+    <a href="../../Books/Team%20Topologies/4.%20Static%20Team%20Topologies/" class="dropdown-item">4. Static Team Topologies</a>
+</li>
+            
+<li>
+    <a href="../../Books/Team%20Topologies/5.%20The%20Four%20Fundamental%20Team%20Topologies/" class="dropdown-item">5. The Four Fundamental Team Topologies</a>
+</li>
+            
+<li>
+    <a href="../../Books/Team%20Topologies/6.%20Choose%20Team-First%20Boundaries/" class="dropdown-item">6. Choose Team First Boundaries</a>
+</li>
+            
+<li>
+    <a href="../../Books/Team%20Topologies/7.%20Team%20Interaction%20Modes/" class="dropdown-item">7. Team Interaction Modes</a>
+</li>
+            
+<li>
+    <a href="../../Books/Team%20Topologies/8.%20Evolve%20Team%20Structures%20with%20Organisational%20Sensing/" class="dropdown-item">8. Evolve Team Structures with Organisational Sensing</a>
+</li>
+            
+<li>
+    <a href="../../Books/Team%20Topologies/Conclusion%20-%20The%20Next-Generation%20Digital%20Operating%20Model/" class="dropdown-item">Conclusion   The Next Generation Digital Operating Model</a>
+</li>
+            
+<li>
+    <a href="../../Books/Team%20Topologies/Recommended%20Reading/" class="dropdown-item">Recommended Reading</a>
+</li>
+            
+<li>
+    <a href="../../Books/Team%20Topologies/Team%20Topologies/" class="dropdown-item">Contents</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">The 7 Habits of Highly Effective People</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../Books/The%207%20Habits%20of%20Highly%20Effective%20People/The%207%20Habits%20of%20Highly%20Effective%20People/" class="dropdown-item">The 7 Habits of Highly Effective People</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">The DevOps Handbook</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../Books/The%20DevOps%20Handbook/1.%20Imagine%20a%20World%20Where%20Dev%20and%20Ops%20Become%20DevOps/" class="dropdown-item">1. Imagine a World Where Dev and Ops Become DevOps</a>
+</li>
+            
+<li>
+    <a href="../../Books/The%20DevOps%20Handbook/Quotes/" class="dropdown-item">Quotes</a>
+</li>
+            
+<li>
+    <a href="../../Books/The%20DevOps%20Handbook/The%20DevOps%20Handbook/" class="dropdown-item">Contents</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">The Managers Path</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../Books/The%20Managers%20Path/1.%20Management%20101/" class="dropdown-item">1. Management 101</a>
+</li>
+            
+<li>
+    <a href="../../Books/The%20Managers%20Path/10.%20Conclusion/" class="dropdown-item">10. Conclusion</a>
+</li>
+            
+<li>
+    <a href="../../Books/The%20Managers%20Path/2.%20Mentoring/" class="dropdown-item">2. Mentoring</a>
+</li>
+            
+<li>
+    <a href="../../Books/The%20Managers%20Path/3.%20Tech%20Lead/" class="dropdown-item">3. Tech Lead</a>
+</li>
+            
+<li>
+    <a href="../../Books/The%20Managers%20Path/4.%20Managing%20People/" class="dropdown-item">4. Managing People</a>
+</li>
+            
+<li>
+    <a href="../../Books/The%20Managers%20Path/5.%20Managing%20a%20Team/" class="dropdown-item">5. Managing a Team</a>
+</li>
+            
+<li>
+    <a href="../../Books/The%20Managers%20Path/6.%20Managing%20Multiple%20Teams/" class="dropdown-item">6. Managing Multiple Teams</a>
+</li>
+            
+<li>
+    <a href="../../Books/The%20Managers%20Path/7.%20Managing%20Managers/" class="dropdown-item">7. Managing Managers</a>
+</li>
+            
+<li>
+    <a href="../../Books/The%20Managers%20Path/8.%20The%20Big%20Leagues/" class="dropdown-item">8. The Big Leagues</a>
+</li>
+            
+<li>
+    <a href="../../Books/The%20Managers%20Path/9.%20Bootstrapping%20Culture/" class="dropdown-item">9. Bootstrapping Culture</a>
+</li>
+            
+<li>
+    <a href="../../Books/The%20Managers%20Path/Quotes/" class="dropdown-item">Quotes</a>
+</li>
+            
+<li>
+    <a href="../../Books/The%20Managers%20Path/The%20Manager%27s%20Path/" class="dropdown-item">Contents</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">The Subtle Art Of Not Giving A F*ck</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../Books/The%20Subtle%20Art%20Of%20Not%20Giving%20A%20F%2Ack/The%20Subtle%20Art%20Of%20Not%20Giving%20A%20Fuck/" class="dropdown-item">Contents</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Zero Trust Networks</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../Books/Zero%20Trust%20Networks/01%20-%20Zero%20Trust%20Fundamentals/" class="dropdown-item">1 - Zero Trust Fundamentals</a>
+</li>
+            
+<li>
+    <a href="../../Books/Zero%20Trust%20Networks/02%20-%20Managing%20Trust/" class="dropdown-item">2 - Managing Trust</a>
+</li>
+            
+<li>
+    <a href="../../Books/Zero%20Trust%20Networks/03%20-%20Network%20Agents/" class="dropdown-item">3 - Network Agents</a>
+</li>
+            
+<li>
+    <a href="../../Books/Zero%20Trust%20Networks/04%20-%20Making%20Authorisation%20Decisions/" class="dropdown-item">4 - Making Authorization Decisions</a>
+</li>
+            
+<li>
+    <a href="../../Books/Zero%20Trust%20Networks/05%20-%20Trusting%20Devices/" class="dropdown-item">5 - Trusting Devices</a>
+</li>
+            
+<li>
+    <a href="../../Books/Zero%20Trust%20Networks/06%20-%20Trusting%20Users/" class="dropdown-item">6 - Trusting Users</a>
+</li>
+            
+<li>
+    <a href="../../Books/Zero%20Trust%20Networks/07%20-%20Trusting%20Applications/" class="dropdown-item">7 - Trusting Applications</a>
+</li>
+            
+<li>
+    <a href="../../Books/Zero%20Trust%20Networks/08%20-%20Trusting%20the%20Traffic/" class="dropdown-item">8 - Trusting the Traffic</a>
+</li>
+            
+<li>
+    <a href="../../Books/Zero%20Trust%20Networks/09%20-%20Realising%20a%20Zero%20Trust%20Network/" class="dropdown-item">9 - Realising a Zero Trust Network</a>
+</li>
+            
+<li>
+    <a href="../../Books/Zero%20Trust%20Networks/10%20-%20The%20Adversarial%20View/" class="dropdown-item">10 - The Adversarial View</a>
+</li>
+            
+<li>
+    <a href="../../Books/Zero%20Trust%20Networks/Quotes/" class="dropdown-item">Quotes</a>
+</li>
+            
+<li>
+    <a href="../../Books/Zero%20Trust%20Networks/Zero%20Trust%20Networks/" class="dropdown-item">Zero Trust Networks</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Courses <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../Courses/30%20Days%20to%20Better%20Writing/" class="dropdown-item">30 Days to Better Writing</a>
+</li>
+                                    
+<li>
+    <a href="../../Courses/Lean%20Agile%20University/" class="dropdown-item">Lean Agile University</a>
+</li>
+                                    
+<li>
+    <a href="../../Courses/Learn%20Wardly%20Mapping/" class="dropdown-item">Learn Wardly Mapping</a>
+</li>
+                                    
+<li>
+    <a href="../../Courses/Learning%20How%20To%20Learn/" class="dropdown-item">Learning How To Learn</a>
+</li>
+                                    
+<li>
+    <a href="../../Courses/The%20Ultimate%20Guide%20to%20Agile%20Retrospectives/" class="dropdown-item">The Ultimate Guide to Agile Retrospectives</a>
+</li>
+                                    
+<li>
+    <a href="../../Courses/Ultraspeaking/" class="dropdown-item">Ultraspeaking</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../Config/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../Global%20Accelerator/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#common-components-of-an-ec2-instance" class="nav-link">Common components of an EC2 instance</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#reservations" class="nav-link">Reservations</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#amazon-machine-images" class="nav-link">Amazon Machine Images</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#launch-permissions" class="nav-link">Launch Permissions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#how-youre-charged" class="nav-link">How You're Charged</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#linux-ami-virtualization-types" class="nav-link">Linux AMI virtualization types</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#boot-modes" class="nav-link">Boot Modes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#instances" class="nav-link">Instances</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#start-stop-and-terminate-instances" class="nav-link">Start, stop and terminate instances</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#instance-types" class="nav-link">Instance Types</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#instance-purchasing-options" class="nav-link">Instance Purchasing Options</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#fleets" class="nav-link">Fleets</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#ec2-fleets" class="nav-link">EC2 Fleets</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#spot-fleets" class="nav-link">Spot Fleets</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#monitor-fleet-events" class="nav-link">Monitor Fleet Events</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#monitor" class="nav-link">Monitor</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#monitoring-with-cloudwatch" class="nav-link">Monitoring with CloudWatch</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#networking" class="nav-link">Networking</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#regions-and-zones" class="nav-link">Regions and Zones</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#enhanced-networking" class="nav-link">Enhanced Networking</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#elastic-fabric-adapter" class="nav-link">Elastic Fabric Adapter</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#placement-groups" class="nav-link">Placement Groups</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#security" class="nav-link">Security</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#storage" class="nav-link">Storage</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#resource-and-tags" class="nav-link">Resource and tags</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#troubleshoot" class="nav-link">Troubleshoot</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<hr />
+<hr />
+<pre><code class="language-ad-abstract">Amazon EC2 is the reason you can get your application onto a server in 10 minutes with nothing more than a credit card. It provides a choice of nearly 400 instance for various types of workloads including: memory, CPU network optimization; GPU workloads; and a choice of Linux flavors as well as Windows and macOS. You can configure the CPU and memory of your instance for your workload, paying based on your choice, and you can terminate it at any time, instantly stopping spending money.
+</code></pre>
+<ul>
+<li>[[#Common components of an EC2 instance|Common components of an EC2 instance]]</li>
+<li>[[#Reservations|Reservations]]</li>
+<li>[[#Amazon Machine Images|Amazon Machine Images]]<ul>
+<li>[[#Launch Permissions|Launch Permissions]]</li>
+<li>[[#How You're Charged|How You're Charged]]</li>
+<li>[[#Linux AMI virtualization types|Linux AMI virtualization types]]</li>
+<li>[[#Boot Modes|Boot Modes]]</li>
+</ul>
+</li>
+<li>[[#Instances|Instances]]<ul>
+<li>[[#Start, stop and terminate instances|Start, stop and terminate instances]]</li>
+<li>[[#Instance Types|Instance Types]]<ul>
+<li>[[#Overview|Overview]]</li>
+<li>[[#Hardware Specifications|Hardware Specifications]]</li>
+<li>[[#Processor Features|Processor Features]]</li>
+<li>[[#AMI Virtualisation Types|AMI Virtualisation Types]]</li>
+<li>[[#Instance Built on the Nitro System|Instance Built on the Nitro System]]</li>
+<li>[[#Network and Storage Features|Network and Storage Features]]</li>
+<li>[[#Networking Features|Networking Features]]</li>
+<li>[[#Storage Features|Storage Features]]</li>
+<li>[[#Instance limits|Instance limits]]</li>
+<li>[[#General Purpose|General Purpose]]</li>
+<li>[[#Instance Performance|Instance Performance]]</li>
+<li>[[#Network Performance|Network Performance]]</li>
+<li>[[#SSD I/O Performance|SSD I/O Performance]]</li>
+<li>[[#Instance Features|Instance Features]]</li>
+<li>[[#Burstable Performance Instances|Burstable Performance Instances]]</li>
+</ul>
+</li>
+<li>[[#Instance Purchasing Options|Instance Purchasing Options]]<ul>
+<li>[[#On-Demand Instances|On-Demand Instances]]</li>
+<li>[[#Reserved Instances|Reserved Instances]]<ul>
+<li>[[#Commitment Term|Commitment Term]]</li>
+<li>[[#Payment Options|Payment Options]]</li>
+<li>[[#Offering Classes|Offering Classes]]</li>
+<li>[[#Scope|Scope]]</li>
+<li>[[#Normalization Factor|Normalization Factor]]</li>
+<li>[[#Usage Billing|Usage Billing]]</li>
+<li>[[#Consolidated Billing|Consolidated Billing]]</li>
+<li>[[#Modifying Reserved Instances|Modifying Reserved Instances]]</li>
+<li>[[#Exchange Reserved Instances|Exchange Reserved Instances]]</li>
+</ul>
+</li>
+<li>[[#Spot Instances|Spot Instances]]<ul>
+<li>[[#Best Practices|Best Practices]]</li>
+<li>[[#How Spot Instances Work|How Spot Instances Work]]</li>
+<li>[[#Savings from purchasing Spot Instances|Savings from purchasing Spot Instances]]</li>
+<li>[[#Spot Instance Requests|Spot Instance Requests]]</li>
+<li>[[#Rebalance recommendations|Rebalance recommendations]]</li>
+<li>[[#Spot Instance Interruptions|Spot Instance Interruptions]]</li>
+<li>[[#Billing for interrupted spot instances|Billing for interrupted spot instances]]</li>
+<li>[[#Spot Instance data feed|Spot Instance data feed]]</li>
+<li>[[#Spot Instance limits|Spot Instance limits]]</li>
+<li>[[#Burstable Performance Instances|Burstable Performance Instances]]</li>
+</ul>
+</li>
+<li>[[#Dedicated Hosts|Dedicated Hosts]]</li>
+<li>[[#Dedicated Instances|Dedicated Instances]]</li>
+<li>[[#On-Demand Capacity Reservations|On-Demand Capacity Reservations]]</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>[[#Fleets|Fleets]]<ul>
+<li>[[#EC2 Fleets|EC2 Fleets]]</li>
+<li>[[#Spot Fleets|Spot Fleets]]</li>
+<li>[[#Monitor Fleet Events|Monitor Fleet Events]]</li>
+</ul>
+</li>
+<li>[[#Monitor|Monitor]]<ul>
+<li>[[#Monitoring with CloudWatch|Monitoring with CloudWatch]]</li>
+</ul>
+</li>
+<li>[[#Networking|Networking]]</li>
+<li>[[#Security|Security]]</li>
+<li>[[#Storage|Storage]]</li>
+<li>[[#Resource and tags|Resource and tags]]</li>
+<li>[[#Troubleshoot|Troubleshoot]]</li>
+</ul>
+<h1 id="common-components-of-an-ec2-instance">Common components of an EC2 instance</h1>
+<ul>
+<li>Instance, the VM</li>
+<li>EBS volume for persistent storage</li>
+<li>SSH Keypair for secure access</li>
+<li>Security group</li>
+<li>AMI</li>
+<li>Instance type with configurable CPU, memory, storage and network throughput</li>
+<li>Elastic IP Address for public access</li>
+<li>Tags</li>
+<li>Multiple physical locations for instances and EBS volumes, called <strong>Regions</strong> and <strong>Availability Zones</strong></li>
+<li>An IAM role defining the permissions the instance has</li>
+<li>Platform, the operating system running in the instance</li>
+<li>Tenancy</li>
+</ul>
+<h1 id="reservations">Reservations</h1>
+<pre><code class="language-ad-note">Describes a launch request for one or more instances, and includes owner, requester, and security group information that applies to all instances in the launch request.
+</code></pre>
+<ul>
+<li><a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Reservation.html">Docs</a></li>
+<li>AWS EC2 what is a reservation ID exactly and what does it represent? [<a href="https://serverfault.com/questions/749118/aws-ec2-what-is-a-reservation-id-exactly-and-what-does-it-represent">Serverfault</a>]</li>
+</ul>
+<h1 id="amazon-machine-images">Amazon Machine Images</h1>
+<p>An AMI contains the following:
+-   a snapshot of an EBS volume for EBS-backed instances, or a template for the root volume for instance-store-backed instances
+-   launch permissions that define which AWS accounts have permission to launch instances with the AMI
+-   A block device mapping that specific the volumes to attach to the instance at startup</p>
+<h2 id="launch-permissions">Launch Permissions</h2>
+<ul>
+<li>public: the owner grants launch permissions to all AWS accounts</li>
+<li>explicit: the owner grants launch permissions to specific AWS accounts</li>
+<li>implicit: the owner has implicit launch permissions for an AMI</li>
+</ul>
+<h2 id="how-youre-charged">How You're Charged</h2>
+<blockquote>
+<p>With AMIs backed by instance store, you're charged for instance usage and storing your AMI in Amazon S3. With AMIs backed by Amazon EBS, you're charged for instance usage, EBS volume storage and usage, and storing your AMI as an EBS snapshot.</p>
+</blockquote>
+<h2 id="linux-ami-virtualization-types">Linux AMI virtualization types</h2>
+<p>Paravirtual (PV) AMIs include special drivers for greater network and disk I/O performance. It is an older virtualization type that has been superseded by Hardware Virtual Machine (HVM) AMIs which now have PV drivers available to them. As such, latest generation instance types do not support PV AMIs.</p>
+<h2 id="boot-modes">Boot Modes</h2>
+<p>AMIs have an optional launch boot mode parameter which overrides the default boot mode defined by the CPU family of the instance type - <strong>UEFI</strong> for Graviton instance types and <strong>legacy-bios</strong> for Intel and AMD.</p>
+<p>In order for an instance to launch successfully with the specified boot mode, the operating system must be configured to support it. This configuration is different for different operating systems.</p>
+<p>Intel and AMD instances can only launch with UEFI on latest generation instance types.</p>
+<p>UEFI Secure Boot is currently not supported.</p>
+<h1 id="instances">Instances</h1>
+<h2 id="start-stop-and-terminate-instances">Start, stop and terminate instances</h2>
+<p>You can <strong>stop</strong> an EBS-backed instance and all of its EBS volumes remain attached. You can restart the instance any time, and you will not be charged when the instance is stopped.</p>
+<p>While stopped, you can change the instance type, kernel and RAM disk.</p>
+<p>You cannot stop and instance-store-backed instance.</p>
+<p>You can <strong>terminate</strong> an instance to shut it down. When this happens, its root volume is deleted, but any other attached EBS volumes are preserved by default, unless the volumes <code>deleteOnTermination</code> attribute specifies otherwise.</p>
+<p>You can prevent accidental termination of an instance by setting its <code>disableApiTermination</code> attribute to <code>true</code>, and you can control the shutdown behavior of the operating system (<code>shutdown -h</code> on Linux and <code>shutdown</code> on Windows) by setting the <code>instanceInitiatedShutdownBehavior</code> attribute to <code>stop</code> or <code>terminate</code> as desired.</p>
+<h2 id="instance-types">Instance Types</h2>
+<h3 id="overview">Overview</h3>
+<p>Each instance type is grouped onto a particular host computer based on its instance family. For example, all T-type instance will be grouped onto computers dedicated to that type.</p>
+<p>While some resources of the host computer are dedicated to the guest instances (such as CPU and Memory) other resources, such as network and disk subsystem, are shared. When these shared resources are underused, an instance can use a high share than if all instance were trying to use it at once, in which case they would each receive an equal share.</p>
+<h3 id="hardware-specifications">Hardware Specifications</h3>
+<p>EC2 instance typically run on 64-bit virtual Intel CPUs.</p>
+<h3 id="processor-features">Processor Features</h3>
+<p>Amazon EC2 instances that run on Intel processors may include the following features. Not all of the following processor features are supported by all instance types.</p>
+<p><strong>Intel AES New Instructions (AES-NI)</strong> - Intel AES-NI encryption instruction set improves upon the original Advanced Encryption Standard (AES) algorithm to provide faster data protection and greater security. All current generation EC2 instances support this processor feature.</p>
+<p><strong>Intel Advanced Vector Extensions (Intel AVX, Intel AVX2, and Intel AVX-512)</strong> - Intel AVX and Intel AVX2 are 256-bit, and Intel AVX-512 is a 512-bit instruction set extension designed for applications that are Floating Point (FP) intensive. Intel AVX instructions improve performance for applications like image and audio/video processing, scientific simulations, financial analytics, and 3D modeling and analysis. These features are only available on instances launched with HVM AMIs.</p>
+<p><strong>Intel Turbo Boost Technology</strong> - Intel Turbo Boost Technology processors automatically run cores faster than the base operating frequency.</p>
+<p><strong>Intel Deep Learning Boost (Intel DL Boost)</strong> - Accelerates AI deep learning use cases. The 2nd Gen Intel Xeon Scalable processors extend Intel AVX-512 with a new Vector Neural Network Instruction (VNNI/INT8) that significantly increases deep learning inference performance over previous generation Intel Xeon Scalable processors (with FP32) for image recognition/segmentation, object detection, speech recognition, language translation, recommendation systems, reinforcement learning, and more. VNNI may not be compatible with all Linux distributions.</p>
+<p>The following instances support VNNI: <code>M5n</code>, <code>R5n</code>, <code>M5dn</code>, <code>M5zn</code>, <code>R5b</code>, <code>R5dn</code>, <code>D3</code>, and <code>D3en</code>. <code>C5</code> and <code>C5d</code> instances support VNNI for only <code>12xlarge</code>, <code>24xlarge</code>, and <code>metal</code> instances.</p>
+<h3 id="ami-virtualisation-types">AMI Virtualisation Types</h3>
+<p>Current generation instance support the Hardware Virtual Machine (HVM) type only. Some older instance types support Paravirtual (PV), but only in specific regions.</p>
+<h3 id="instance-built-on-the-nitro-system">Instance Built on the Nitro System</h3>
+<p>Nitro is a collection of AWS-built hardware and software components that increase performance of guest instance by reducing the virtualization overhead</p>
+<p>The following components are part of the Nitro System:</p>
+<ul>
+<li>Nitro card<ul>
+<li>Local NVMe storage volumes</li>
+<li>Networking hardware support</li>
+<li>Management</li>
+<li>Monitoring</li>
+<li>Security</li>
+</ul>
+</li>
+<li>Nitro security chip, integrated into the motherboard</li>
+<li>Nitro hypervisor - A lightweight hypervisor that manages memory and CPU allocation and delivers performance that is indistinguishable from bare metal for most workloads.</li>
+</ul>
+<h3 id="network-and-storage-features">Network and Storage Features</h3>
+<p>The network and storage features of an instance are determined by the instance type.</p>
+<h3 id="networking-features">Networking Features</h3>
+<ul>
+<li>IPv6 is supported on all current generation instance types</li>
+<li>Placement groups are available for supported instance types to affect the distribution of instance where network latency between instances is important.</li>
+<li>Enhanced networking is available on all current generation instance types with the following benefits:<ul>
+<li>Traffic within the same region using IPv4 or IPv6 can support up to 5Gbps for single-flow traffic and up to 25Gbps for multi-flow.</li>
+<li>Traffic to and from S3 buckets within the same region over public IP address space or through a VPC endpoint can use all available instance aggregate bandwidth.</li>
+</ul>
+</li>
+<li>The maximum transmission unit (MTU) varies across instance types.<ul>
+<li>All instance types support standard Ethernet V2 1500 MTU.</li>
+<li>All current generation instance types support 9001 MTU, or jumbo frames.</li>
+</ul>
+</li>
+</ul>
+<h3 id="storage-features">Storage Features</h3>
+<ul>
+<li>All instance types support EBS volumes, while only some support instance store volumes.</li>
+<li>You can gain additional EBS I/O by using EBS-optimised instances. Some instance types are EBS-optimised by default.</li>
+</ul>
+<h3 id="instance-limits">Instance limits</h3>
+<p>The limit on the number of a particular instance type an account can run is based on the number of vCPUs in use.</p>
+<p>vCPU limits only apply to on-demand and spot instances, not to reserved instances.</p>
+<h3 id="general-purpose">General Purpose</h3>
+<p>General purpose instance types provide a balance of compute, memory and networking resources, and can be effectively utilised for a wide range of workloads.</p>
+<p>The following general purpose instance types are available:</p>
+<ul>
+<li><strong>M5 and M5a</strong> - standard general purpose instances running on Intel Xeon® Platinum 8175M processors (M5) or AMD EPYC 7000 series processors (M5a) CPUs. Ideal for: small and midsize databases; data processing tasks that require additional memory; caching fleets; and backend servers for enterprise applications such as SAP, Sharepoint, etc.</li>
+<li><strong>M5zn</strong> - ideal for applications that benefit from <em>extremely high single-thread performance</em> to <em>high throughput, low latency networking</em>. Well suited for gaming, high-performance computing and simulation modeling.<ul>
+<li>powered by Intel Xeon Scalable processors in the cloud, with an all-core turbo frequency up to 4.5 GHz.</li>
+</ul>
+</li>
+<li><strong>M6g and M6gd</strong> - balanced compute, memory and networking resources running on AWS Graviton2 CPUs, ideal for a broad range of general purpose workloads, including application servers, microservices, gaming servers, midsize data stores and caching fleets. M6gd instances have local NVMe-based SSDs physically connected to the host server, as opposed to the M6g instances that use EBS.</li>
+<li><strong>m6g.metal</strong> - bare metal version of the M6g.</li>
+<li><strong>M6i</strong> - higher-spec-ed Intel Xeon CPUs than M5<ul>
+<li>highest maximum network speed of the general purpose instance types, at up to 50 Gbps</li>
+<li>powered by 3rd generation Intel Xeon Scalable processors (code named Ice Lake).</li>
+<li>Support for new Intel Advanced Vector Extensions (AVX 512) instructions for faster execution of cryptographic algorithms.</li>
+<li>Support for always-on memory encryption using Intel Total Memory Encryption (TME).</li>
+</ul>
+</li>
+<li><strong>Mac1</strong> - powered by Apple Mac Mini computers.</li>
+<li><strong>T2, T3, T3a and T4g</strong> - burstable performance instance types. T2 is last generation, T3 current generation Intel CPU, T3a current generation AMD CPU and T4g current generation Graviton2 CPU. Ideal for intermittent workloads, such as:<ul>
+<li>websites and web applications</li>
+<li>code repositories</li>
+<li>non-production test environments</li>
+<li>microservices</li>
+</ul>
+</li>
+</ul>
+<h3 id="instance-performance">Instance Performance</h3>
+<p>Some instance types allow you to control the C-states and P-states of the CPU.</p>
+<p>EBS-optimised instances improve the performance of traffic to and from EBS.</p>
+<h3 id="network-performance">Network Performance</h3>
+<p>You can enable enhanced networking on supported instance types to provide lower latencies, lower network jitter, and higher packet-per-second (PPS) performance. Most applications do not consistently need a high level of network performance, but can benefit from access to increased bandwidth when they send or receive data.</p>
+<p>Some instance types have a baseline network IO which they can burst above with a network I/O credit mechanism, similar to the burstable CPU instance types.</p>
+<h3 id="ssd-io-performance">SSD I/O Performance</h3>
+<h3 id="instance-features">Instance Features</h3>
+<h3 id="burstable-performance-instances">Burstable Performance Instances</h3>
+<h2 id="instance-purchasing-options">Instance Purchasing Options</h2>
+<h3 id="on-demand-instances">On-Demand Instances</h3>
+<p>With On-Demand Instances, you pay for compute capacity by the second with no long-term commitments. You have full control over its lifecycle—you decide when to launch, stop, hibernate, start, reboot, or terminate it.</p>
+<p>It's recommended to use On-Demand Instances for applications with short-term, irregular workloads that cannot be interrupted.</p>
+<h3 id="reserved-instances">Reserved Instances</h3>
+<p>Reserved instance (RIs) aren't physical instances, rather a discount applied to the AWS bill tot he use of on-demand instances. These instances must match certain attributes, instance type and region.</p>
+<p>If you already have on-demand instance running that match the attributes of your reserved instances, then the RIs will be immediately applied to those running instances. This applies to both zonal and regional RIs.</p>
+<h4 id="commitment-term">Commitment Term</h4>
+<p>The term commitment, which isn't automatically renewed, is either:</p>
+<ul>
+<li><strong>One-year</strong>: A year is defined as 31536000 seconds (365 days).</li>
+<li><strong>Three-year</strong>: Three years is defined as 94608000 seconds (1095 days).</li>
+</ul>
+<h4 id="payment-options">Payment Options</h4>
+<p>RIs have the following payment options:</p>
+<ul>
+<li><strong>All Upfront</strong> - full payment is made at the start of the term</li>
+<li><strong>Partial Upfront</strong> - a portion of the total cost is paid upfront, and the remainder paid through a discounted hourly rate. You'll pay this regardless of whether or not the instances are being used.</li>
+<li><strong>No Upfront</strong> - you are billed the discounted hourly rate for the duration of the commitment period, regardless of whether the instance is being used.</li>
+</ul>
+<p>Reserved instance to do automatically renew. To ensure uninterrupted savings, you can queue a RI purchase up to three years in advance.</p>
+<h4 id="offering-classes">Offering Classes</h4>
+<p>There are two offering classes of RIs:</p>
+<ul>
+<li><strong>Standard</strong> - provide the largest discount, but can only be modified, not exchanged. These RIs can be bought and sold in the RI marketplace but can't be exchanged for other RIs.</li>
+<li><strong>Convertible</strong> - provides a lower discount, but can be exchanged for another convertible RI with different attribute. Can also be modified. These can't be bought or sold in the RI marketplace.</li>
+</ul>
+<h4 id="scope">Scope</h4>
+<p>RIs have two possible scopes - <strong>regional</strong>, where the RI is scopes to a particular region, and <strong>zonal</strong>, where the RI is scopes to a single availability zone. They have the following differences:</p>
+<ul>
+<li><strong>capacity reservation</strong> - a regional RI does not reserve capacity, whereas a zonal RI does reserve capacity in the specified AZ.</li>
+<li><strong>AZ flexibility</strong> - a regional RI can be launched in any AZ in the region, whereas a zonal RI is tied to the AZ in which it's been purchased.</li>
+<li><strong>instance size flexibility</strong> - regional RIs can be used on any size of instance within the instance family, whereas a zonal RI is purchased for a specified size and type of instance</li>
+<li><strong>queuing a purchase</strong> - purchases for regional RIs can be queued, whereas purchases for zonal RIs can't.</li>
+</ul>
+<h4 id="normalization-factor">Normalization Factor</h4>
+<p>Each instance has an <strong>instance size footprint</strong> that determines its normalization factor.</p>
+<p>Some examples of instance normalization factors can be seen in this table.</p>
+<table>
+<thead>
+<tr>
+<th>Instance Size</th>
+<th>Normalization Factor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>nano</td>
+<td>0.25</td>
+</tr>
+<tr>
+<td>micro</td>
+<td>0.5</td>
+</tr>
+<tr>
+<td>small</td>
+<td>1</td>
+</tr>
+<tr>
+<td>medium</td>
+<td>2</td>
+</tr>
+<tr>
+<td>large</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p>What this means is if you purchase a <code>t3.medium</code> RI, and have two <code>t3.small</code> on-demand instances running, then the discount will be applied to both instances in full.</p>
+<p>On the other hand, if your instead have a single <code>large</code> on-demand instance running, the discount will only be applied to half the cost of the instance.</p>
+<p>Normalization factors also exist for bare metal instances, but does not scale in the same way as for normal instances. For example, an <code>i3.metal</code> instance has the same normalization factor of <code>128</code> as a <code>i3.16xlarge</code>.</p>
+<h4 id="usage-billing">Usage Billing</h4>
+<p>RIs are generally charged per clock-hour during the commitment period. Per-second billing is available for instances running an open source Linux distribution, whereas per-hour billing is used for commercial distributions.</p>
+<p>A single RI billing benefit can only apply to a total of 3600 seconds (one hour) of instance usage per clock hour. These second can be allocated to a single instance, or spread across multiple instances.</p>
+<p>If you purchase a single <code>t3.medium</code> RI and run four <code>t3.medium</code> instances for an hour, one instance will receive the RI discount while the other three are charged at the on-demand price. On the other hand, if you run your four <code>t3.medium</code> instances for fifteen minutes each, they all receive the RI discount and no on-demand charge will be applied.</p>
+<h4 id="consolidated-billing">Consolidated Billing</h4>
+<p>RIs that are purchased in an account that is the payer account for a set of consolidated billing accounts, then the benefits of those RIs are shared across all the members accounts.</p>
+<h4 id="modifying-reserved-instances">Modifying Reserved Instances</h4>
+<p>You can modify the following attributes of your standard and convertible RIs:</p>
+<ul>
+<li>AZ within a region</li>
+<li>Scope, from regional to zonal and vice versa</li>
+<li>Instance size within the same instance family</li>
+<li>Network, from EC2-classic to VPC and vice versa (only available in accounts created after 2013-12-04)</li>
+</ul>
+<p>You can allocate your reservation into different instance sizes across an instance family, provided the instance size footprint is unchanged after the modification.</p>
+<h4 id="exchange-reserved-instances">Exchange Reserved Instances</h4>
+<blockquote>
+<p>Only available on convertible reserved instances. Not available on standard.</p>
+</blockquote>
+<p>A convertible RI can be exchanged for another convertible RI with different attributes, including instance family, platform (operating system) and tenancy.</p>
+<p>The following rules apply:</p>
+<ul>
+<li>convertible RIs can only be exchanged for other convertible RIs</li>
+<li>you cannot exchange for RIs in another region</li>
+<li>you can receive only one new convertible RI at a time, but can exchange one or more RI.</li>
+<li>you can modify a reservation and trade part of the split</li>
+<li>you can mix and match some payment options, but not all<ul>
+<li>All Upfront can be exchanged for Partial Upfront, and vice versa</li>
+<li>No Upfront can be exchanged for All or Partial Upfront</li>
+<li>No Upfront can be exchanged for another No Upfront</li>
+<li>You cannot exchange All or Partial Upfront for No Upfront, provided the new instances hourly price is at least as high as the old one</li>
+<li>if you exchange multiple RIs, the expiration date of the new RI is the one furthest in the future</li>
+<li>if you exchange a single RI, it must have the same term as the new one</li>
+<li>if you merge multiple RIs with different lengths, the new RI has a 3 year term.</li>
+</ul>
+</li>
+</ul>
+<h3 id="spot-instances">Spot Instances</h3>
+<blockquote>
+<p>A Spot Instance is an instance that uses spare EC2 capacity that is available for up to 90% less than the on-demand price.</p>
+</blockquote>
+<p>Concepts:</p>
+<ul>
+<li><strong>Spot capacity pool</strong> - a set of unused EC2 instance with the same instance type (<code>t3.medium</code>) in the same AZ</li>
+<li><strong>Spot price</strong> - the current price of a spot instance per hour</li>
+<li><strong>Spot instance request</strong> -</li>
+<li><strong>EC2 instance rebalance recommendation</strong> - a notice emitted by EC2 that an instance is at increased risk of being interrupted due to reduced spot capacity being available.</li>
+<li><strong>Spot instance interruption</strong> - a two-minute notice emitted by EC2 when spot capacity has been exhausted and an instance is going to be interrupted.</li>
+</ul>
+<h4 id="best-practices">Best Practices</h4>
+<blockquote>
+<p>Spot Instances are recommended for stateless, fault-tolerant, flexible applications. Spot Instances are not suitable for workloads that are inflexible, stateful, fault-intolerant, or tightly coupled between instance nodes.</p>
+</blockquote>
+<ul>
+<li><strong>Prepare individual instance for interruptions</strong>. Create a rule in amazon EventBridge to capture the two possible signals - rebalance recommendation and instance interruption.</li>
+<li><strong>Be flexible about instance types and Availability Zones</strong>. This give spot a better chance at finding available capacity. A good rule of thumb is to be flexible across at least 10 instance types for each workload. In addition, make sure that all Availability Zones are configured for use in your VPC and selected for your workload.</li>
+<li><strong>Use EC2 Auto Scaling groups or Spot Fleet to manage your aggregate capacity</strong>. Prefer to think in terms of resources such as vCPU and memory capacity, rather than instance capacity. This way you can use Auto Scaling groups and Spot Fleets to maintain versatile fleets of compute resource.</li>
+<li><strong>Use the capacity optimized allocation strategy</strong>. Use the <code>capacity optimised</code> allocation strategy of your auto scaling group to provision spot instances on servers that have the most spare capacity. This decreased the change of your instance being reclaimed.</li>
+<li><strong>Use proactive capacity rebalancing</strong>. Capacity Rebalancing helps you maintain workload availability by proactively augmenting your fleet with a new Spot Instance before a running Spot Instance receives the two-minute Spot Instance interruption notice.</li>
+<li><strong>Combine multiple of the above</strong>. Combine the <code>Capacity Rebalancing</code> feature of the Spot Fleet with the <code>capacity optimised</code> allocation strategy of the auto scaling group as well mixed instance policy to maximize the flexibility of your capacity across multiple availability zones.</li>
+</ul>
+<h4 id="how-spot-instances-work">How Spot Instances Work</h4>
+<ul>
+<li><strong>Launch Spot Instances in a launch group</strong>. You can request to have a number of spot instances launched into a single group together. The request will only succeed if the entire group can be launched at once, and if the spot price exceeds your maximum, they will all be terminated at once. This is inflexible and reduces the likelihood of your request succeeding.</li>
+<li><strong>Launch Spot Instances in an Availability Zone group</strong>. Same as the launch group, but where the spot instances are launched into an availability zone. Same limitations as well. The instances will be launched in the AZ for the specified subnet.</li>
+<li><strong>Launch Spot Instances in a VPC</strong>. Specify a subnet into which the spot instances are launched.</li>
+</ul>
+<h4 id="savings-from-purchasing-spot-instances">Savings from purchasing Spot Instances</h4>
+<p>![[spot-savings.png]]</p>
+<p><strong>To view the savings information for a Spot Fleet (console)</strong></p>
+<ol>
+<li>Open the Amazon EC2 console at <a href="https://console.aws.amazon.com/ec2/"></a><a href="https://console.aws.amazon.com/ec2/">https://console.aws.amazon.com/ec2/</a>.</li>
+<li>On the navigation pane, choose <strong>Spot Requests</strong>.</li>
+<li>Select the ID of a Spot Fleet request and scroll to the <strong>Savings</strong> section. Alternatively, select the check box next to the Spot Fleet request ID and choose the <strong>Savings</strong> tab.</li>
+</ol>
+<h4 id="spot-instance-requests">Spot Instance Requests</h4>
+<p>![[spot_lifecycle.png]]</p>
+<p>You can request to launch dedicated spot instances, either by specifying the tenancy in the spot request, or by requesting to launch into a VPC with an instance tenancy of <code>dedicated</code>.</p>
+<h4 id="rebalance-recommendations">Rebalance recommendations</h4>
+<p>An EC2 instance rebalance recommendation is a signal emitted when a spot instance is at increased risk of interruption. The signal can arrive sooner than the two-minute spot-instance interruption signal, giving you more time to respond to the lack of available capacity, though rapid changes in capacity mean the rebalance recommendation signal can arrive alongside the interruption signal.</p>
+<p>There are two ways this signal can be handler: Amazon EventBridge and instance metadata.</p>
+<p>Using EventBridge, a signal looking like this will arrive:</p>
+<pre><code>{
+    &quot;version&quot;: &quot;0&quot;,
+    &quot;id&quot;: &quot;12345678-1234-1234-1234-123456789012&quot;,
+    &quot;detail-type&quot;: &quot;EC2 Instance Rebalance Recommendation&quot;,
+    &quot;source&quot;: &quot;aws.ec2&quot;,
+    &quot;account&quot;: &quot;123456789012&quot;,
+    &quot;time&quot;: &quot;yyyy-mm-ddThh:mm:ssZ&quot;,
+    &quot;region&quot;: &quot;us-east-2&quot;,
+    &quot;resources&quot;: [
+        &quot;arn:aws:ec2:us-east-2:123456789012:instance/i-1234567890abcdef0&quot;
+    ],
+    &quot;detail&quot;: {
+        &quot;instance-id&quot;: &quot;i-1234567890abcdef0&quot;,
+        &quot;instance-action&quot;: &quot;terminate&quot;
+    }
+}
+
+</code></pre>
+<p>You can create an EventBridge rule to handle it.</p>
+<p>Using instance metadata, you can retrieve the signal with the following command:</p>
+<pre><code>curl &lt;http://169.254.169.254/latest/meta-data/events/recommendations/rebalance&gt;
+
+</code></pre>
+<p>If the signal has been emitted, you will see the following result</p>
+<pre><code>{&quot;noticeTime&quot;: &quot;2020-10-27T08:22:00Z&quot;}
+
+</code></pre>
+<p>or else you will get a 404 back.</p>
+<h4 id="spot-instance-interruptions">Spot Instance Interruptions</h4>
+<p>A spot instance can be terminated for the following reasons:
+-   <strong>price</strong> - the spot price is greater than your maximum price
+-   <strong>capacity</strong> - if available capacity drops too far, EC2 will reclaim running spot instances to fulfill on-demand capacity requirements
+-   <strong>constraints</strong> - constraints in the spot request, such as AZ or launch group, are no longer met.</p>
+<p>You can specify what EC2 does when it interrupts a spot instance:
+-   <strong>stop</strong> the interrupted instance
+-   <strong>hibernate</strong> the interrupted instance
+-   <strong>terminate</strong> the interrupted instance (default)</p>
+<p>To <strong>stop</strong> a spot instance, the following prerequisites must be met:
+-   <strong>Spot instance request type</strong> - must be <code>persistent</code>, and musn't specify a launch group.
+-   <strong>EC2 Fleet or Spot Fleet request type</strong> - must be <code>maintain</code>.
+-   <strong>Root volume type</strong> - must be EBS.</p>
+<p>Once a spot instance has been stopped by the spot service, only the spot service can restart it when capacity becomes available to satisfy the spot instance request.</p>
+<p>To <strong>hibernate</strong> a spot instance, the following prerequisites must be met:
+-   <strong>Spot instance request type</strong> - must be <code>persistent</code>, and musn't specify a launch group.
+-   <strong>EC2 Fleet or Spot Fleet request type</strong> - must be <code>maintain</code>.
+-   <strong>Supported instance families</strong> – C3, C4, C5, M4, M5, R3, R4
+-   <strong>Instance RAM size</strong> – must be less than 100 GB
+-   <strong>Supported operating system</strong> - you must install the hibernation agent, or use an AMI that already has it.
+-   <strong>Root volume type</strong> - must be EBS, and must be large enough to store the instance memory</p>
+<p>When a spot instance is hibernated, its EBS volume and private IP addresses are preserved and instance memory is saved to the volume. If there is not enough space on the volume, the hibernation agent isn't installed, or the OS doesn't support hibernation, hibernation fails and the instance is sopped instead.</p>
+<p><strong>Spot instance bests practices</strong>
+-   Use the default maximum price, which is the On-Demand price.
+-   Store important data regularly in a place that isn't affected by instance interruption
+-   Divide the work into small tasks (using a Grid, Hadoop, or queue-based architecture) or use checkpoints so that you can save your work frequently.
+-   Use the rebalance recommendation and two-minute interruption signals to manage the capacity of your spot instances.
+-   Remember it is possible for the spot instance to be interrupted before the two-minute signal is received.
+-   It is recommended to check for interruption notices every five seconds.</p>
+<p>To prepare a spot instance for hibernation:
+-   Install the hibernation agent
+    -   Amazon Linux: <code>sudo yum install hibagent</code>
+    -   Ubuntu: <code>sudo apt-get install hibagent</code>
+-   Add the following to user data</p>
+<pre><code>#!/bin/bash
+/usr/bin/enable-ec2-spot-hibernation
+
+</code></pre>
+<blockquote>
+<p>Spot instance that are configured to hibernate on interruption, rather than stop, will not receive the interruption signal two minutes prior to interruption. Instead, hibernation will happen immediately, and only instance intended to be stopped will have two minutes to react.</p>
+</blockquote>
+<p>If the instance is to be stopped or terminated, the time of this action can be found in the instance metadata:</p>
+<pre><code>TOKEN=`curl -X PUT &quot;&lt;http://169.254.169.254/latest/api/token&gt;&quot; -H &quot;X-aws-ec2-metadata-token-ttl-seconds: 21600&quot;` \\\\
+curl -H &quot;X-aws-ec2-metadata-token: $TOKEN&quot; –v &lt;http://169.254.169.254/latest/meta-data/spot/instance-action&gt;
+
+{&quot;action&quot;: &quot;stop&quot;, &quot;time&quot;: &quot;2017-09-18T08:22:00Z&quot;}
+
+</code></pre>
+<p>You can look for <code>BidEvictedEvent</code> events in CloudTrail to see if Amazon EC2 interrupted a spot instance.</p>
+<h4 id="billing-for-interrupted-spot-instances">Billing for interrupted spot instances</h4>
+<table>
+<thead>
+<tr>
+<th>Who interrupts the Spot Instance</th>
+<th>Operating system</th>
+<th>Interrupted in the first hour</th>
+<th>Interrupted in any hour after the first hour</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>If you stop or terminate the Spot Instance</td>
+<td>Windows and Linux (excluding RHEL and SUSE)</td>
+<td>Charged for the seconds used</td>
+<td>Charged for the seconds used</td>
+</tr>
+<tr>
+<td></td>
+<td>RHEL and SUSE</td>
+<td>Charged for the full hour even if you used a partial hour</td>
+<td>"Charged for the full hours used and charged a full hour for the interrupted partial hour"</td>
+</tr>
+<tr>
+<td>If the Amazon EC2 Spot service interrupts the Spot Instance</td>
+<td>Windows and Linux (excluding RHEL and SUSE)</td>
+<td>No charge</td>
+<td>Charged for the seconds used</td>
+</tr>
+<tr>
+<td></td>
+<td>RHEL and SUSE</td>
+<td>No charge</td>
+<td>"Charged for the full hours used but no charge for the interrupted partial hour"</td>
+</tr>
+</tbody>
+</table>
+<h4 id="spot-instance-data-feed">Spot Instance data feed</h4>
+<p>The spot instance data feed is a file delivered to an S3 bucket ever hour describing the cost usage of your spot instances for the previous hour. The files are gzipped, and can be split into multiple files is the usage is high enough.</p>
+<h4 id="spot-instance-limits">Spot Instance limits</h4>
+<p>Spot instances are limited by the number of vCPUs being utilized by either running or requested spot instances. That means if you terminate your spot instances, but don't cancel the spot request, the request will still contribute towards the spot instance limit.</p>
+<p>Current spot limits can be found <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-limits.html">here</a>.</p>
+<h4 id="burstable-performance-instances_1">Burstable Performance Instances</h4>
+<h3 id="dedicated-hosts">Dedicated Hosts</h3>
+<h3 id="dedicated-instances">Dedicated Instances</h3>
+<h3 id="on-demand-capacity-reservations">On-Demand Capacity Reservations</h3>
+<h1 id="fleets">Fleets</h1>
+<p>A fleet allows you to launch multiple instances with a single API call. A fleet can contain multiple instance types and purchasing options and can be launched across multiple availability zones.</p>
+<p>There is no additional cost for using EC2 fleet. You pay only for the EC2 instances.</p>
+<h2 id="ec2-fleets">EC2 Fleets</h2>
+<p>EC2 fleets are a way of launching multiple instances with a single API call. When you launch a fleet, you specify your maximum capacity and budget, and EC2 will launch instances until one of those limits has been reached.</p>
+<p>When specifying the desired capacity of the fleet, the default is number of instances, but you can also specify vCPUs, memory, storage or throughput.</p>
+<p>Both spot and on-demand instances can be launched in the same fleet, with different capacities for each. If you have reserved instances for an instance type in your fleet, they will be used when you launch the on-demand instances.</p>
+<p>Multiple instance types can be specified, with weighted capacities specified for each.</p>
+<p>Fleets isn't available through the AWS console. It's only available through the CLI and API. The fleet request is limited to a single region, and to a single subnet in an availability zone.</p>
+<blockquote>
+<p>Aside: this can be combined with a placement group to deploy instances that need to talk to each other while processing their workload.</p>
+</blockquote>
+<p>![[ec2-fleet.png]]</p>
+<p>There are three fleet request types</p>
+<ul>
+<li><strong>instant</strong> - EC2 Fleet places a synchronous one-time request for the desired capacity and returns the instances launched in the API response.</li>
+<li><strong>request</strong> - EC2 Fleet places a synchronous one-time request for the desired capacity and does not attempt to replenish capacity by replacing interrupted spot instances.</li>
+<li><strong>maintain</strong> - this is the default, where EC2 Fleet places an asynchronous request for the desired capacity, and maintains capacity by replacing any interrupted spot instances.</li>
+</ul>
+<p>The <strong>instant</strong> and <strong>request</strong> types will make only one attempt to launch the desired capacity. Any instances that fail to launch will not be retried.</p>
+<p>Amazon EC2 Auto Scaling and Amazon EMR are built around EC2 Fleet, both using an <strong>instant</strong> request type.</p>
+<p>An EC2 Fleet has the following allocation strategies for spot instances:</p>
+<ul>
+<li><strong>lowest-price</strong> - this is the default, where the spot instance comes from the capacity pool with the lowest price. Optionally specify <strong>InstancePoolsToUseCount</strong> to launch spot instances over a particular number of capacity pools to diversify you</li>
+<li><strong>diversified</strong> - the spot instances are distributed across all capacity pools.</li>
+<li><strong>capacity-optimized</strong> - the spot instances are launched into the pool with the highest capacity available. You can optionally specify a priority for each instance type in the fleet using <strong>capacity-optimized-prioritized</strong>.</li>
+</ul>
+<p>On Demand capacity reservations can be used to fulfill fleet requests only if the request type is instant.</p>
+<p>EC2 Fleets of type <strong>maintain</strong> can be configured for Capacity Rebalancing, where they automatically respond to rebalance recommendation signals emitted when a spot instance is at an elevated risk of being interrupted. This needs to be configured in the <code>MaintenanceStrategies</code> structure of the fleet request. This can only be configured when the fleet is created. Once the fleet is running, it cannot be changed. Note that the instance marked for rebalance is not automatically terminated.</p>
+<blockquote>
+<p>EC2 Fleet can launch new spot instances until the current capacity is double the target capacity. This allows a fleet composed entirely of spot instances to all be marked for rebalance, and to have their replacements launched automatically. It does, however, prevent any of those replacements being replaced until the old instances are terminated.</p>
+</blockquote>
+<p>Spot instance marked for rebalance are not counted towards the desired capacity during scale-in or scale-out. Instance marked for rebalance will continue to be a part of your fleet until you terminate them, and will cause your actual capacity to be greater than the fulfilled capacity until you do so.</p>
+<blockquote>
+<p>It is recommended to provide as many spot capacity pools in the request as possible, and to be flexible with the availability zone.</p>
+</blockquote>
+<p>You can use <strong>instance weighting</strong> to specify the number of units each instance contributes towards the target capacity. The fleet request doesn't know about vCPUs or memory, rather you use the launch specification to say how many unit each instance contributes towards the target capacity. The price of the instance is altered by this, where the <em>price per instance hour</em> becomes the <em>price per unit hour</em>.</p>
+<p>For example, if you wanted your capacity based on vCPUs and you specified a <code>m5.8xlarge</code> with 32 vCPUs, it would contribute 32 units towards the capacity, and its price per unit hour would be $1.536 / 32 = $0.048.</p>
+<blockquote>
+<p>Instance weighting can cause the fulfilled capacity to be a floating point number, which must be taken into account when setting up things like cloudwatch alarms to trigger when the fulfilled capacity changes. The floating point number will sometimes be rounded up, depending on what other system is analyzing it.</p>
+</blockquote>
+<h2 id="spot-fleets">Spot Fleets</h2>
+<p>A spot fleet has all the same capability as an EC2 Fleet. The principal difference is where an EC2 Fleet consists of on-demand instances with optional spot instance, a spot fleet consists of spot instances with optional on-demand instances.</p>
+<p>Spot Fleets support Application Auto Scaling, which provides the following scaling policies:</p>
+<ul>
+<li><strong>target tracking</strong> - increase or decrease the capacity by tracking a particular metric, such as average CPU load across the fleet.</li>
+<li><strong>step scaling</strong> - increases the fleet either by a specified number of capacity units, or a percentage of the current capacity.</li>
+<li><strong>scheduled scaling</strong> - increase or decrease the capacity based on the date and time.</li>
+</ul>
+<p>The fleet must have a request type of <code>maintain</code> to use automatic scaling.</p>
+<h2 id="monitor-fleet-events">Monitor Fleet Events</h2>
+<p>There are five event types for EC2 Fleets:</p>
+<ul>
+<li><strong>EC2 Fleet State Change</strong></li>
+<li><strong>EC2 Fleet Spot Instance Request Change</strong></li>
+<li><strong>EC2 Fleet Instance Change</strong></li>
+<li><strong>EC2 Fleet Information</strong></li>
+<li><strong>EC2 Fleet Error</strong></li>
+</ul>
+<p>The same five event types are available for spot fleets.</p>
+<h1 id="monitor">Monitor</h1>
+<p>To begin monitoring your EC2 instances, you should create a baseline of performance by observing the instances at different times of day and under different loads. Measure the following metrics during this time:</p>
+<ul>
+<li>CPU Utilization</li>
+<li>Network Utilization</li>
+<li>Disk Performance</li>
+<li>Disk Reads/Writes</li>
+<li>Memory utilization, disk swap utilization, disk space utilization, page file utilization, log collection</li>
+</ul>
+<p>Monitoring can either be automated using services like CloudWatch Alarms and EventBridge, or it can be done manually using CloudWatch Dashboards.</p>
+<p>There are two types of status checks built into EC2: <strong>system status checks</strong> and <strong>instance status checks</strong>. A failed system status check indicates a problem that AWS needs to repair. If you don't want to wait for that you can migrate your instance to a new host (stop and start for EBS-backed, terminate and relaunch for instance-store-backed). A failed instance status check indicates a problem with the instance, such as exhausted memory or incompatible kernel.</p>
+<p>A <strong>scheduled event</strong> is a form of maintenance AWS will perform on your instance on your behalf.</p>
+<h2 id="monitoring-with-cloudwatch">Monitoring with CloudWatch</h2>
+<p>Metrics for your instance can be collected and stored in CloudWatch for 15 months.</p>
+<p>EC2 sends data to CloudWatch in 5 minute intervals by default, or 1 minute intervals if detailed monitoring is enabled for the given instance. When detailed monitoring is enabled, you are charged per metric you send to CloudWatch, not for data storage.</p>
+<h1 id="networking">Networking</h1>
+<h2 id="regions-and-zones">Regions and Zones</h2>
+<p>Amazon EC2 is composed of the following geographical entities:
+- <strong>Region</strong> - the standard AWS geographical unit. When deploying resources and services, you always specify the region they will be placed in. Each region is physically isolated from the others, preventing failures in one affecting the others.
+- <strong>Availability Zones</strong> - a subset of a region, physically isolated from the other AZs in that region, preventing failures in one affecting the others. AZs are named differently for each AWS account, so <code>us-east-1a</code> will not be the same datacentre for all accounts. If you need to coordinate resources in AZ across accounts, you can use the AZ ID to do this, which takes the form of <code>use1-az1</code>. These IDs always refer to the same AZs in each account.
+- <strong>Local Zones</strong> - an extension of an AWS region, allowing you to deploy resources and services even closer to your users. Currently only available in <code>us-east-1</code> and <code>us-west-2</code>.
+- <strong>Wavelength Zones</strong> - another extension of a region, allowing you to deploy resources to the edge of a 5G carriers network. It works by having you extend your VPC to the carriers network, and opting in to the wavelength zone that will be created as a result. You deploy resources into this zone in the same way you would into an availability zone.
+- <strong>AWS Outposts</strong> - a way of extending AWS into an on-prem datacentre. You create a VPC in AWS then create one or more subnets on the Outpost. You can then deploy resources into that subnet in your datacentre while managing them through the AWS console and API.</p>
+<h2 id="enhanced-networking">Enhanced Networking</h2>
+<p>Enhanced networking uses a form of virtualisation (single root I/O virtualisation, or SR-IOV) to provide higher bandwidth, higher packer per second performance (PPS) and lower inter-instance latencies.</p>
+<p>There is no additional charge for using Enhanced Networking.</p>
+<p>So why would you not just enable it by default? You need to enable it in the kernel. OSs won't come with that support by default.</p>
+<p>Enhanced networking is available by using one of two possible virtual network interfaces: AWS' own Enhanced Network Adaptor (ENA) or the Intel 82599 Virtual Function (VF) interface. The ENA offers network speeds of up to 100 Gbps while the Intel device only offers 10 Gbps.</p>
+<h3 id="enhanced-networking-using-the-elastic-network-adaptor">Enhanced Networking using the Elastic Network Adaptor</h3>
+<p>Enhanced networking is provided by a virtual network interface called the Elastic Network Adaptor (ENA). To use this device, you must first install and enable the ENA module in the kernel of the guest OS.</p>
+<p>You can verify that the ENA kernel module is installed using the following command:</p>
+<pre><code>[ec2-user ~]$ modinfo ena
+filename:       /lib/modules/4.14.33-59.37.amzn2.x86_64/kernel/drivers/amazon/net/ena/ena.ko
+version:        1.5.0g
+license:        GPL
+description:    Elastic Network Adapter (ENA)
+author:         Amazon.com, Inc. or its affiliates
+srcversion:     692C7C68B8A9001CB3F31D0
+alias:          pci:v00001D0Fd0000EC21sv*sd*bc*sc*i*
+alias:          pci:v00001D0Fd0000EC20sv*sd*bc*sc*i*
+alias:          pci:v00001D0Fd00001EC2sv*sd*bc*sc*i*
+alias:          pci:v00001D0Fd00000EC2sv*sd*bc*sc*i*
+depends:
+retpoline:      Y
+intree:         Y
+name:           ena
+</code></pre>
+<p>You can verify an AMI has ENA support using this AMI query:</p>
+<pre><code>aws ec2 describe-images --image-id ami_id --query &quot;Images[].EnaSupport&quot;
+</code></pre>
+<p>You can verify the ENA driver is being used on a particular network interface like so:</p>
+<pre><code>[ec2-user ~]$ ethtool -i eth0
+driver: ena
+version: 1.5.0g
+firmware-version:
+expansion-rom-version:
+bus-info: 0000:00:05.0
+supports-statistics: yes
+supports-test: no
+supports-eeprom-access: no
+supports-register-dump: no
+supports-priv-flags: no
+</code></pre>
+<h4 id="enabling-enhanced-networking">Enabling Enhanced Networking</h4>
+<ul>
+<li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sriov-networking.html#enhanced-networking-ubuntu">Enabling it on Ubuntu</a></li>
+<li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sriov-networking.html#enable-enhanced-networking">Enabling it on Amazon Linux</a></li>
+<li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sriov-networking.html#enhanced-networking-linux">Enabling it on Linux</a></li>
+</ul>
+<h2 id="elastic-fabric-adapter">Elastic Fabric Adapter</h2>
+<h2 id="placement-groups">Placement Groups</h2>
+<p>A placement group is a way of influencing the way instances are distributed across an availability zone. There are three types of placement group, and there is no charge for using them.</p>
+<h3 id="cluster">Cluster</h3>
+<p>A <strong>cluster</strong> placement group is where instances are grouped together in a single availability zone. They enjoy a higher per-flow throughput limit for TCP/IP traffic and are placed in the same high-bisection bandwidth segment of the network.</p>
+<p>Cluster placement groups are recommended for workloads that require low network latency, high network throughput, and/or where most of the traffic is between instances.</p>
+<p>It is recommended:
+- to use Enhanced Networking with this configuration.
+- to launch all instances in a cluster with a single launch request.</p>
+<p>A cluster placement group runs on the same hardware, which is why they are able to get such good network connections between instances. As such, attempting to launch new instances into an existing placement group, or stopping some instances in a cluster to be restarted later, might result in capacity errors since the physical server is now full up. This problem can be solved by stopping and starting all instances in the placement group so they can be migrated to hardware that has capacity for all requested instances.</p>
+<h4 id="rules-and-limitations">Rules and limitations</h4>
+<ul>
+<li>All current generation instance types are supported, except burstable performance instances and Mac instances.</li>
+<li>It can't span multiple AZs</li>
+<li>Network throughput is limited to what the slowest instance supports</li>
+<li>When Enhanced Networking is enabled, instances within a cluster placement group can use up to 10 Gbps for single flow traffic, but only up to 5 Gbps when not in one.</li>
+</ul>
+<h3 id="partition">Partition</h3>
+<p>A partition placement group is a grouping of instances into one or more partitions within a region. All the instances in a particular partition will be deployed across a set of racks that they share with no other partition. The racks of a partition will have power sources that are shared with no other racks.</p>
+<p>The purpose of a partition placement group is to reduce the likelihood of correlated hardware failures affecting the application running across the instances. It is most useful for replicated workloads, and even allows topology-aware applications to see which instances are in each partition so they can make intelligent replication decisions.</p>
+<h4 id="rules-and-limitations_1">Rules and limitations</h4>
+<ul>
+<li>Max 7 partitions per placement group. Max number of instances is limited by account.</li>
+<li>When launching multiple instances into a placement group, there is no guarantee of even distribution of instances across partitions.</li>
+<li>A partition placement group with Dedicated instances can have a maximum of two partitions.</li>
+</ul>
+<h3 id="spread">Spread</h3>
+<p>A spread placement group is a set of instances that are each placed on distinct racks. This is recommended for applications that have a small number of critical instances.</p>
+<p>A spread placement group can span multiple AZs per region, and you can have up to seven instances per AZ per group.</p>
+<h4 id="rules-and-limitations_2">Rules and limitations</h4>
+<ul>
+<li>Maximum of seven instances per AZ. If you need more than seven, it is recommended to run multiple spread placement groups.</li>
+<li>Do not support dedicated instances.</li>
+</ul>
+<h1 id="security">Security</h1>
+<h1 id="storage">Storage</h1>
+<h1 id="resource-and-tags">Resource and tags</h1>
+<h1 id="troubleshoot">Troubleshoot</h1></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
