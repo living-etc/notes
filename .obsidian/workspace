@@ -1,0 +1,102 @@
+{
+  "main": {
+    "id": "0062ce29d25c16f3",
+    "type": "split",
+    "children": [
+      {
+        "id": "dab3f5f105ff0c44",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Books/The Subtle Art Of Not Giving A F*ck/The Subtle Art Of Not Giving A Fuck.md",
+            "mode": "source"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "f44f40360d50efcf",
+    "type": "split",
+    "children": [
+      {
+        "id": "aba98357ad740c0c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "41fb8a9610537a82",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "544bd379bd78e5f4",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 465
+  },
+  "right": {
+    "id": "716c4c0f732ee42a",
+    "type": "split",
+    "children": [
+      {
+        "id": "6bfd4d80eaed9fbb",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d9dddbd991e6e928",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Books/The Subtle Art Of Not Giving A F*ck/The Subtle Art Of Not Giving A Fuck.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "dab3f5f105ff0c44",
+  "lastOpenFiles": [
+    "Books/The Subtle Art Of Not Giving A F*ck/The Subtle Art Of Not Giving A Fuck.md",
+    "Books/The Subtle Art Of Not Giving A F*ck/Notes.md",
+    "AWS Services/EC2.md",
+    "AWS Services/Global Accelerator.md",
+    "99. Templates/Course.md",
+    "99. Templates/Book.md",
+    "Courses/Lean Agile University.md",
+    "Courses/30 Days to Better Writing.md",
+    "Books/Show Your Work/Show Your Work.md",
+    "Books/Drive - The Surprising Truth About What Motivates Us/Drive - The Surprising Truth About What Motivates Us.md"
+  ]
+}
