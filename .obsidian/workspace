@@ -4,11 +4,14 @@
     "type": "split",
     "children": [
       {
-        "id": "dab3f5f105ff0c44",
+        "id": "541428176f2e8633",
         "type": "leaf",
         "state": {
-          "type": "empty",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "D&D/Rime of the Frostmaiden/Vellynne Harpnell.md",
+            "mode": "source"
+          }
         }
       }
     ],
@@ -49,7 +52,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 465
+    "width": 355
   },
   "right": {
     "id": "716c4c0f732ee42a",
@@ -65,6 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "D&D/Rime of the Frostmaiden/Vellynne Harpnell.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -79,20 +83,20 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
+    "width": 289,
     "collapsed": true
   },
-  "active": "dab3f5f105ff0c44",
+  "active": "541428176f2e8633",
   "lastOpenFiles": [
-    "Books/The Subtle Art Of Not Giving A F*ck/The Subtle Art Of Not Giving A Fuck.md",
-    "Books/The Subtle Art Of Not Giving A F*ck/Notes.md",
-    "AWS Services/EC2.md",
-    "AWS Services/Global Accelerator.md",
-    "99. Templates/Course.md",
-    "99. Templates/Book.md",
-    "Courses/Lean Agile University.md",
-    "Courses/30 Days to Better Writing.md",
-    "Books/Show Your Work/Show Your Work.md",
-    "Books/Drive - The Surprising Truth About What Motivates Us/Drive - The Surprising Truth About What Motivates Us.md"
+    "D&D/Rime of the Frostmaiden/Vellynne Harpnell.md",
+    "D&D/Rime of the Frostmaiden/Uriro Rainfate.md",
+    "D&D/Rime of the Frostmaiden/Sessions/2. 2022-10-12.md",
+    "D&D/Rime of the Frostmaiden/Firey Flappybird.md",
+    "D&D/Rime of the Frostmaiden/Dougan's Hole.md",
+    "Home.md",
+    "D&D/Rime of the Frostmaiden/Duhg's Friend.md",
+    "D&D/Rime of the Frostmaiden/Duhg.md",
+    "D&D/Rime of the Frostmaiden/Hlin Trollbane.md",
+    "D&D/Rime of the Frostmaiden/Mysterious Forest Beings.md"
   ]
 }

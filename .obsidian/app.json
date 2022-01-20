@@ -1,5 +1,10 @@
 {
   "foldIndent": true,
   "foldHeading": true,
-  "spellcheck": true
+  "spellcheck": true,
+  "attachmentFolderPath": "Attachments",
+  "alwaysUpdateLinks": true,
+  "spellcheckDictionary": [
+    "biryani"
+  ]
 }
