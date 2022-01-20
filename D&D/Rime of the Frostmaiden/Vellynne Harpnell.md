@@ -1,0 +1,1 @@
+Member of the prestigious [[Harpell family]] and of the [[Arcane Brotherhood]]. The mysterious spellcaster seeks to learn more of the power under the ice.

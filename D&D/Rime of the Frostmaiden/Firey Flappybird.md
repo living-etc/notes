@@ -1,0 +1,4 @@
+Woods' phoenix. Can teleport short distances, taking with it anyone within the immediate vicinity.
+
+# Duhg and his friend
+Distinguished itself in a fight [[Duhg]] and [[Duhg's Friend|his friend]] in a cave north of [[Good Mead]] by teleporting the party out of a tight squeeze twice. First it teleported the party into a narrow corridor that Duhg and his friend struggled to get into. The respite was only brief however as the two forced themselves down either end of the corridor, trapping the party. Flappy came to the rescue one again by teleporting the party to the other side of Dugh, killing him in the process.

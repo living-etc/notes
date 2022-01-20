@@ -1,0 +1,1 @@
+The "right hand" of [[Auril the Frostmain]]. Claimed by the [[The Children of Auril]] to be the one carrying out the murders of those who avoid their sacrifice in the lottery.

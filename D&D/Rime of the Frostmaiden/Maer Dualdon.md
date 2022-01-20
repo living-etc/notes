@@ -1,0 +1,1 @@
+A lake to the north of [[Bryn Shander]]. Fishing has been stopped here because of the presence of a monster in the lake.

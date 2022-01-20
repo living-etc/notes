@@ -1,0 +1,1 @@
+While retrieving the [[Lost Blackiron Iron Train|lost Blackiron iron train]] the party cross paths with a pair of mysterious hunched figures, speaking in a language no one understands. The party hide, not wanting to cross paths with who or whatever would be out in a blizzard at night, and the figure continue on their way without spotting the party.

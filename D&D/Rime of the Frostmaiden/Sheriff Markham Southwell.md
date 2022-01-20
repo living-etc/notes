@@ -1,0 +1,1 @@
+Sheriff of [[Bryn Shander]] who commands the town’s militia. The sheriff has conscripted civilians to help him in matters beyond the capabilities of the town’s militia on behalf of the town’s speaker, [[Duvessa Shane]].

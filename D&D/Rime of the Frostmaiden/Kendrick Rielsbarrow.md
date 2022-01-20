@@ -1,0 +1,1 @@
+former speaker of [[Good Mead]]. Was killed when giants attacked a train of mead bound for [[Bryn Shander]].

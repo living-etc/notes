@@ -1,0 +1,1 @@
+Sacrificed by [[The Children of Auril]] in place of [[Gyse Genlian]] after Genlian's father, [[Lord Genlian]], paid one of the children to have his son spared.

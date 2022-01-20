@@ -1,0 +1,3 @@
+Largest of the Ten Towns, Bryn Shander is a walled town perched atop a cold, lonely, wind-lashed hill. Bright lanterns suspended over narrow streets twist in the wind and add flecks of color to the town’s otherwise drab surroundings. Speaker [[Duvessa Shane]] leads the city of a thousand souls. Once a trading hub with the north, trade has suffered since the coming of the night as has the humor, camaraderie, and goodwill of the people.
+
+Notable locations include the [[Blackiron Blades smithy]], the [[House of the Morninglord]], and the [[Northlook Inn and Tavern]].
